@@ -22,6 +22,6 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
   Route::get('/terminal/list', function () {
-      return view('home');
+      return view('manager_index');
   });
 });
