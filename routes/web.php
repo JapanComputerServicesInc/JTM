@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 利用者
+Route::get('/userlist',function(){
+  return view('user_index');
+});
+
 // 管理者一覧
 Route::prefix('admin')->group(function () {
   Route::get('/terminal/list', function () {
@@ -28,10 +33,5 @@ Route::prefix('admin')->group(function () {
 
 // 管理者 端末新規登録
 Route::get('/terminal/new',function(){
-  return view('manager_new');
-});
-
-// 利用者 
-Route::get('/userlist',function(){
-  return view('user_index');
+  return view('terminal_new');
 });
