@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class=" add-task-row">
-      <a class="btn btn-success btn-sm pull-right" href="#">新規登録</a>
 
+  <div class=" add-task-row">
+      <a class="btn btn-success btn btn-success btn-sm pull-right" href="#">新規登録</a>
   </div>
+
+
     <div class="content-panel">
     <table class="table table-striped table-advance table-hover">
         <h4><i class="fa fa-angle-right"></i> 端末情報一覧</i></h4>
@@ -12,15 +14,15 @@
         <thead>
             <tr>
                 <th><i class="fa fa-bullhorn"></i> id</th>
-                <th><i class="fa fa-bullhorn"></i> 利用状況</th>
-                <th class="hidden-phone"><i class="fa fa-question-circle"></i> ホスト名</th>
-                <th><i class="fa fa-bookmark"></i> 氏名</th>
-                <th><i class=" fa fa-edit"></i> 保管場所</th>
-                <th><i class=" fa fa-edit"></i> OS</th>
-                <th><i class=" fa fa-edit"></i> Office</th>
-                <th><i class=" fa fa-edit"></i> CPU</th>
-                <th><i class=" fa fa-edit"></i> メモリ</th>
-                <th><i class=" fa fa-edit"></i> HDD</th>
+                <th><i class="fa fa-check-square"></i> 利用状況</th>
+                <th class="hidden-phone"><i class="fa fa-laptop"></i> ホスト名</th>
+                <th><i class="fa fa-user"></i> 氏名</th>
+                <th><i class=" fa fa-archive"></i> 保管場所</th>
+                <th><i class=" fa fa-apple"></i> OS</th>
+                <th><i class=" fa fa-windows"></i> Office</th>
+                <th><i class=" fa fa-heart"></i> CPU</th>
+                <th><i class=" fa fa-save"></i> メモリ</th>
+                <th><i class=" fa fa-edit"></i> HDD/SSD</th>
                 <th></th>
             </tr>
         </thead>
@@ -53,5 +55,7 @@
     </table>
 
 </div>
+
+
 <!-- /content-panel -->
 @endsection
