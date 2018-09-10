@@ -35,3 +35,7 @@ Route::prefix('admin')->group(function () {
 Route::get('/terminal/new',function(){
   return view('terminal_new');
 });
+// 管理者 端末新規登録確認
+Route::get('/terminal/check',function(){
+  return view('terminal_check');
+});

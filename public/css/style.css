@@ -413,7 +413,7 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #4169e1;
+    background: #ffd777;
     border-bottom: 1px solid #4169e1;
 }
 
@@ -746,7 +746,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
-    color:#fff;
+    /* color:#fff; */
 }
 
 
