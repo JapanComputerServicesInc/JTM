@@ -19,17 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// 管理者一覧
 Route::prefix('admin')->group(function () {
   Route::get('/terminal/list', function () {
       return view('manager_index');
   });
 });
 
-Route::get('/user/new',function(){
-  return view('user_new');
+// 管理者 端末新規登録
+Route::get('/terminal/new',function(){
+  return view('manager_new');
 });
 
+// 利用者 
 Route::get('/userlist',function(){
   return view('user_index');
 });
