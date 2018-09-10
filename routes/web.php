@@ -26,6 +26,10 @@ Route::prefix('admin')->group(function () {
   });
 });
 
+Route::get('/user/new',function(){
+  return view('user_new');
+});
+
 Route::get('/userlist',function(){
   return view('user_index');
 });
