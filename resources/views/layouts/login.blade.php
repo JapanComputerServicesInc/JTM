@@ -48,7 +48,7 @@
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="{{ asset('js/jquery.backstretch.min.js') }}"></script>
     <script>
-        $.backstretch("{{ asset('images/logo.png') }}", {
+        $.backstretch("{{ asset('images/img.jpg') }}", {
             speed: 500
         });
     </script>
