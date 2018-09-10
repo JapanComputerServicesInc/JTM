@@ -5,14 +5,14 @@
 <div class="row mt">
     <div class="col-lg-12">
         <div class="form-panel">
-            <h4 class="mb"><i class="fa fa-angle-right"></i>端末新規登録</h4>
+            <h4 class="mb">端末新規登録</h4>
             <form class="form-horizontal style-form" method="get">
 
                 {{--
                 <form method="POST" action="{{ route('employees.create') }}"> --}} {{--
                     @csrf --}}
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">利用状況<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label">利用状況<i class="fa fa-check-square"></i></label>
                      <div class="radio">
                        <label>
          						    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>使用中
@@ -27,21 +27,21 @@
 
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">ホスト名<i class="fa fa-desktop"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label">ホスト名<i class="fa fa-laptop"></i></label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">稟議No<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label">稟議No<i class="fa fa-list-ol"></i></label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">氏名<i class="fa fa-child"></i></label>
+                        <label class="col-lg-2 control-label">氏名<i class="fa fa-user"></i></label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">保管場所<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 control-label">保管場所<i class="fa fa-save"></i></label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">メーカー名<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 control-label">メーカー名<i class="fa fa-gavel"></i></label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">製品名<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 control-label">製品名<i class="fa fa-desktop"></i></label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -89,21 +89,21 @@
 
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">シリアルナンバー<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label">シリアルナンバー<i class="fa fa-list-ol"></i></label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">CPU/クロック<i class="fa fa-heart"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label">CPU<i class="fa fa-heart"></i></label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">メモリ<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 control-label">メモリ<i class="fa fa-save"></i></label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">HDD<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 control-label">HDD<i class="fa fa-edit"></i></label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">QRコードURL<i class="fa fa-angle-right"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label">QRコードURL<i class="fa fa-envelope"></i></label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
