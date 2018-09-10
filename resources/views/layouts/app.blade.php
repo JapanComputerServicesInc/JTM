@@ -224,7 +224,7 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
 
-                        <p class="centered"><a href="profile.html"><img src="{{asset('images/pc.jpg')}}" class="img-circle" width="70"></a></p>
+                        <p class="centered"><a href="profile.html"><img src="{{asset('images/metu.jpg')}}" class="img-circle" width="70"></a></p>
                         <h5 class="centered">Welcome To JTM!!</h5>
 
                         <li class="mt">
