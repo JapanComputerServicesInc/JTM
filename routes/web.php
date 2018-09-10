@@ -25,3 +25,7 @@ Route::prefix('admin')->group(function () {
       return view('manager_index');
   });
 });
+
+Route::get('/userlist',function(){
+  return view('user_index');
+});
