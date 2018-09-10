@@ -8,8 +8,6 @@
             <div class="card">
                 <div class="card-header">利用状況登録画面</div>
                   <div class="card-body">
-                    <!--<form method="post" action="{{ route('employee_create') }}"> 
-                      @csrf-->
                         <div class="form-group">
                           <label for="employeeNo">ホスト名</label>
                           <input type="number" class="form-control @if($errors->has('employee_no')) is-invalid @endif" id="employee_no" name="employee_no"  placeholder="12345678" value="{{ old('employee_no') }}" required>
