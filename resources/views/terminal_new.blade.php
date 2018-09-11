@@ -12,7 +12,7 @@
                 <form method="POST" action="{{ route('employees.create') }}"> --}} {{--
                     @csrf --}}
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">利用状況<i class="fa fa-check-square"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-check-square"></i>利用状況</label>
                      <div class="radio">
                        <label>
          						    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>使用中
@@ -27,21 +27,21 @@
 
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">ホスト名<i class="fa fa-laptop"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-laptop"></i>ホスト名</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">稟議No<i class="fa fa-list-ol"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-list-ol"></i>稟議No</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">氏名<i class="fa fa-user"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fa fa-user"></i>氏名</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -51,14 +51,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">部門<i class="fa fa-building"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-building"></i>部門</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">保管場所<i class="fa fa-save"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fa fa-save"></i>保管場所</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">メーカー名<i class="fa fa-gavel"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fa fa-gavel"></i>メーカー名</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">製品名<i class="fa fa-desktop"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fa fa-desktop"></i>製品名</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -89,21 +89,21 @@
 
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">シリアルナンバー<i class="fa fa-list-ol"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-list-ol"></i>シリアルナンバー</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">CPU<i class="fa fa-heart"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-brain"></i>CPU</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">メモリ<i class="fa fa-save"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fa fa-save"></i>メモリ</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">HDD<i class="fa fa-edit"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fa fa-edit"></i>HDD</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">OS<i class="fa fa-apple"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fab fa-apple"></i>OS</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -133,7 +133,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 control-label">Office<i class="fa fa-windows"></i></label>
+                        <label class="col-lg-2 control-label"><i class="fab fa-windows"></i>Office</label>
                         <div class="col-sm-10">
                           <select class="form-control">
                             <option>1</option>
@@ -143,14 +143,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">メモ<i class="fa fa-edit"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-edit"></i>メモ</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label">QRコードURL<i class="fa fa-envelope"></i></label>
+                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-envelope"></i>QRコードURL</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
                         </div>
