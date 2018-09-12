@@ -49,4 +49,15 @@ Route::prefix('admin')->group(function () {
     return view('terminal_complete');
   });
 
+  // 端末編集
+  Route::get('/terminal/edit',function(){
+    return view('terminal_edit');
+  });
+
+  // 端末編集
+  Route::get('/terminal/edit/check',function(){
+    return view('terminal_edit_check');
+  });
+
+
 });
