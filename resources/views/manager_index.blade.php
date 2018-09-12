@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
+
 @section('content')
 
-=======
+
 @section('content') {{--
 <div class="container">
     <div class="row">
