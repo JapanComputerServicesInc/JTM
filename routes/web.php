@@ -42,4 +42,9 @@ Route::prefix('admin')->group(function () {
     return view('terminal_check');
   });
 
+  // 端末新規登録完了
+  Route::get('/terminal/complete',function(){
+    return view('terminal_complete');
+  });
+
 });
