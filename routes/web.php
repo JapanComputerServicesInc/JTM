@@ -24,6 +24,8 @@ Route::get('/userlist',function(){
   return view('user_index');
 });
 
+
+
 // 管理者
 Route::prefix('admin')->group(function () {
 
