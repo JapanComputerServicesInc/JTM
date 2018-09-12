@@ -2240,3 +2240,8 @@ label {
 .site-min-height {
     min-height: 900px;
 }
+@media screen and (min-width:740px) { 
+    .tooltips{
+        visibility:hidden
+    }
+}
