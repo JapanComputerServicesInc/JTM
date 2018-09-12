@@ -1,25 +1,6 @@
 @extends('layouts.app')
 
-@section('content') {{--
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-xs-12">
-            <label class="control-label">氏名</label>
-        </div>
-        <div class="col-md-4 col-xs-12">
-            <label class="control-label">氏名</label>
-        </div>
-        <div class="col-md-4 col-xs-12">
-            <label class="control-label">氏名</label>
-        </div>
-        <div class="col-md-6 col-xs-12">
-            <label class="control-label">氏名</label>
-        </div>
-        <div class="col-md-6 col-xs-12">
-            <label class="control-label">氏名</label>
-        </div>
-    </div>
-</div> --}}
+@section('content') 
 
 
 <div class="row mt">

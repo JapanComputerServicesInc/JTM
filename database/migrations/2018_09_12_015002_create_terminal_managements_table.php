@@ -16,13 +16,12 @@ class CreateTerminalManagementsTable extends Migration
         Schema::create('terminal_managements', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('approval_no');
+            $table->string('approval_no')->nullable($value = true);
             $table->string('pc_name');
             $table->string('model_name');
             $table->string('serial_no');
-            $table->string('memo');
-            $table->string('sophos_tamper_protection');
-            $table->string('qr_code');
+            $table->string('memo')->nullable($value = true);;
+            $table->string('qr_code')->nullable($value = true);;
             $table->unsignedInteger('status_id');
             $table->foreign('status_id')
                   ->references('id')
