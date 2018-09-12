@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -227,7 +228,8 @@
 
                         <p class="centered"><a href="profile.html"><img src="{{asset('images/dog.jpg')}}" class="img-circle" width="100"></a></p>
                         <h5 class="centered">Welcome To JTM!!</h5>
-
+                        
+                        <span class="btn_a">
                         <li class="mt">
                             <a class="active" href="#">
                               <i class="fa fa-dashboard"></i>
@@ -246,7 +248,7 @@
                                 <li><a href="#">一覧3</a></li>
                             </ul>
                         </li>
-
+                        </span>
                         <!--<li class="sub-menu">
                           <a href="javascript:;" >
                               <i class="fa fa-cogs"></i>
@@ -298,8 +300,8 @@
                               <li><a  href="chartjs.html">Chartjs</a></li>
                           </ul>
                       </li>
-
-                  </ul> -->
+ -->
+                  </ul>
                         <!-- sidebar menu end-->
                 </div>
             </aside>

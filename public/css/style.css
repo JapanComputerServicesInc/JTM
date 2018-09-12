@@ -2240,3 +2240,25 @@ label {
 .site-min-height {
     min-height: 900px;
 }
+@media screen and (min-width:740px) { 
+    .tooltips{
+        visibility:hidden
+    }
+}
+@media screen and (max-width:739px) {
+    ul.sidebar-menu li a.active{
+        display: none;
+    }
+    ul.sidebar-menu li a{
+        display:none;
+    }
+    .wrapper{
+        margin-top:143px;
+        padding-left:0;
+        padding-right:0;
+        padding-top:0;
+    }
+    .form-panel{
+        margin:0;
+    }
+}
