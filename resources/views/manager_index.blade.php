@@ -115,8 +115,8 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 pull-right text-right">
-                    <button type="button" class="btn btn-default">クリア</button>
-                    <button type="submit" class="btn btn-info">検索</button>
+                    <button type="submit" class="btn btn-info btn-round">検索</button>
+                    <button type="button" class="btn btn-default btn-round">クリア</button>
                   </div>
                 </div>
             </form>
@@ -127,7 +127,7 @@
 <div class="row mt">
     <div class="col-lg-12">
         <div class="form-panel">
-            <a class="btn btn-success btn btn-success pull-right" href="#">新規登録</a>
+            <a class="btn btn-success btn-round pull-right" href="#">新規登録</a>
 
             <table class="table table-striped table-advance table-hover">
                 <h4> 端末情報一覧</h4>
