@@ -52,7 +52,20 @@
             speed: 500
         });
     </script>
-
+    
+    <script>
+    $(function() {
+    $('.tooltips').click(function() {
+        $(this).toggleClass('active');
+ 
+        if ($(this).hasClass('active')) {
+            $('.sidebar-toggle-box').addClass('active');
+        } else {
+            $('..sidebar-toggle-box').removeClass('active');
+        }
+    });
+});
+    </script>
 
 </body>
 
