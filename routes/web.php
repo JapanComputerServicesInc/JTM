@@ -24,18 +24,22 @@ Route::get('/userlist',function(){
   return view('user_index');
 });
 
-// 管理者一覧
+// 管理者
 Route::prefix('admin')->group(function () {
+
+  // 一覧
   Route::get('/terminal/list', function () {
       return view('manager_index');
   });
-});
 
-// 管理者 端末新規登録
-Route::get('/terminal/new',function(){
-  return view('terminal_new');
-});
-// 管理者 端末新規登録確認
-Route::get('/terminal/check',function(){
-  return view('terminal_check');
+  // 端末新規登録
+  Route::get('/terminal/new',function(){
+    return view('terminal_new');
+  });
+
+  // 端末新規登録確認
+  Route::get('/terminal/check',function(){
+    return view('terminal_check');
+  });
+
 });
