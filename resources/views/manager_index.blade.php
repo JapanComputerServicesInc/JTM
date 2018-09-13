@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content') 
+@section('content')
 
 
 <div class="row mt">
@@ -119,12 +119,12 @@
                         <th><i class="fa fa-check-square"></i> 利用状況</th>
                         <th class="hidden-phone"><i class="fa fa-laptop"></i> ホスト名</th>
                         <th><i class="fa fa-user"></i> 氏名</th>
-                        <th><i class=" fa fa-archive"></i> 保管場所</th>
-                        <th><i class=" fab fa-apple"></i> OS</th>
-                        <th><i class=" fab fa-windows"></i> Office</th>
-                        <th><i class=" fa fa-brain"></i> CPU</th>
-                        <th><i class=" fa fa-save"></i> メモリ</th>
-                        <th><i class=" fa fa-edit"></i> HDD/SSD</th>
+                        <th><i class="fa fa-archive"></i> 保管場所</th>
+                        <th><i class="fab fa-apple"></i> OS</th>
+                        <th><i class="fab fa-windows"></i> Office</th>
+                        <th><i class="fa fa-brain"></i> CPU</th>
+                        <th><i class="fa fa-save"></i> メモリ</th>
+                        <th><i class="fa fa-edit"></i> HDD/SSD</th>
                         <th></th>
                     </tr>
                 </thead>

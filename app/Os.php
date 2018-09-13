@@ -1,0 +1,18 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Os extends Model
+{
+    protected $fillable = [
+        'os'
+    ];
+
+    public function terminal_Managements()
+    {
+        return $this->hasMany('App\TerminalManagement');
+    }
+
+}

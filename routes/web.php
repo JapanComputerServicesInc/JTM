@@ -30,9 +30,7 @@ Route::get('/userlist',function(){
 Route::prefix('admin')->group(function () {
 
   // 一覧
-  Route::get('/terminal/list', function () {
-      return view('manager_index');
-  });
+  Route::get('/terminal/list','ManagerController@index')->name('manager_index');
 
   // 端末新規登録
   Route::get('/terminal/new',function(){
