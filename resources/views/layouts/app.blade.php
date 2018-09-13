@@ -228,11 +228,11 @@
 
                         <p class="centered"><a href="profile.html"><img src="{{asset('images/dog.jpg')}}" class="img-circle" width="100"></a></p>
                         <h5 class="centered">Welcome To JTM!!</h5>
-                        
+
                         <span class="btn_a">
                         <li class="mt">
                             <a class="active" href="#">
-                              <i class="fa fa-dashboard"></i>
+                              <i class="fas fa-tachometer-alt"></i>
                               <span>新規</span>
                           </a>
                         </li>
