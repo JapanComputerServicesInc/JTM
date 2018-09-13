@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Cpu;
 use App\Os;
 use App\Depository;
-use App\OfficeInfo;
+use App\OfficeInfomation;
 use App\Memory;
 use App\Hdd;
 use App\Status;
@@ -20,7 +20,7 @@ class ManagerController extends Controller
         $cpus = Cpu::all();
         $os = Os::all();
         $depositories = Depository::all();
-        $office_info = OfficeInfo::all();
+        $office_info = OfficeInfomation::all();
         $memories = Memory::all();
         $hdds = Hdd::all();
         $status = Status::all();

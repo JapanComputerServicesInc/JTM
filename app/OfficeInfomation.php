@@ -4,11 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TerminalInfo extends Model
+class OfficeInfomation extends Model
 {
     protected $fillable = [
-        'name','model_number','producer'
+        'name','office_licenses_id'
     ];
+
+    public function office_license()
+    {
+        return $this->belongsTo('App\OfficeLicense');
+    }
 
     public function terminal_Managements()
     {
