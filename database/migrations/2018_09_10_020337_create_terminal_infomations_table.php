@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOfficeInfoTable extends Migration
+class CreateTerminalInfomationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateOfficeInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('office_info', function (Blueprint $table) {
+        Schema::create('terminal_infomations', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->unsignedInteger('office_licenses_id');
-            $table->foreign('office_licenses_id')
-                  ->references('id')
-                  ->on('office_licenses');
+            $table->string('model_number');
+            $table->string('producer');
         });
     }
 
@@ -31,6 +29,6 @@ class CreateOfficeInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('office_info');
+        Schema::dropIfExists('terminal_infomations');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatusTable extends Migration
+class CreateOfficeInfomationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('status', function (Blueprint $table) {
+        Schema::create('office_infomations', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('status');
+            $table->string('name');
+            $table->unsignedInteger('office_licenses_id');
+            $table->foreign('office_licenses_id')
+                  ->references('id')
+                  ->on('office_licenses');
         });
     }
 
@@ -27,6 +31,6 @@ class CreateStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status');
+        Schema::dropIfExists('office_infomations');
     }
 }

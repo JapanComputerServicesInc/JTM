@@ -25,7 +25,7 @@ class CreateTerminalManagementsTable extends Migration
             $table->unsignedInteger('status_id');
             $table->foreign('status_id')
                   ->references('id')
-                  ->on('status');
+                  ->on('statuses');
             $table->unsignedInteger('depositories_id');
             $table->foreign('depositories_id')
                   ->references('id')

@@ -15,4 +15,10 @@ class Os extends Model
         return $this->hasMany('App\TerminalManagement');
     }
 
+    /**
+     * モデルと関連しているテーブル
+     *
+     * @var string
+     */
+    protected $table = 'os';
 }

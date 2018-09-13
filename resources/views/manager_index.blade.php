@@ -27,11 +27,10 @@
                     <label class="col-md-1 control-label">OS</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            @foreach ($cpus as $cpu)
+
+                            @endforeach
+                            <option value="{{$cpu ->id}}">{{$cpu ->cpu}}</option>
                         </select>
                     </div>
                 </div>

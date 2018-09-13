@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class OfficeInfoTableSeeder extends Seeder
+class OfficeInfomationsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class OfficeInfoTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('office_info')->insert([
+        DB::table('office_infomations')->insert([
             ['name' =>'Office 2013 Standard 32bit','office_licenses_id' => '1'],
             ['name' =>'Microsoft Office Home and Business プラスOffice365サービス','office_licenses_id' => '2']
 

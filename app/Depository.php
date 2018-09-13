@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cpu extends Model
+class Depository extends Model
 {
     protected $fillable = [
-        'cpu'
+        'depository'
     ];
 
     public function terminal_Managements()
@@ -15,10 +15,4 @@ class Cpu extends Model
         return $this->hasMany('App\TerminalManagement');
     }
 
-    /**
-     * モデルと関連しているテーブル
-     *
-     * @var string
-     */
-    protected $table = 'cpu';
 }

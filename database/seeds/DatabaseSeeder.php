@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
         $this->call(MemoriesTableSeeder::class);
         $this->call(EmployeesTableSeeder::class);
         $this->call(OfficeLicenseTableSeeder::class);
-        $this->call(OfficeInfoTableSeeder::class);
+        $this->call(OfficeInfomationsTableSeeder::class);
         $this->call(OsTableSeeder::class);
-        $this->call(StatusTableSeeder::class);
-        $this->call(TerminalInfoTableSeeder::class);
+        $this->call(StatusesTableSeeder::class);
+        $this->call(TerminalInfomationsTableSeeder::class);
         $this->call(TerminalManagementsTableSeeder::class);
     }
 }

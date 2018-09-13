@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class StatusTableSeeder extends Seeder
+class StatusesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('status')->insert([
+        DB::table('statuses')->insert([
              ['status' => '使用中'],
              ['status' => '未使用']
          ]);
