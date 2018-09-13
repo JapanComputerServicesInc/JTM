@@ -13,90 +13,62 @@
             <hr>
             <form class="form-horizontal style-form" method="get">
                 <div class="form-group">
-                    <label class="col-sm-5 col-md-5 col-lg-1 control-label">氏名</label>
-                    <div class="col-lg-3">
+                    <label class="col-md-4 control-label" style="font-size:1.5em;text-align:center;letter-spacing:1.3px;">社員名</label>
+                    <div class="col-md-8">
                         <input type="text" class="form-control">
                     </div>
-                    <label class="col-md-1 control-label">保管場所</label>
-                    <div class="col-lg-3">
+                </div>
+                <div class="form-group">
+                <label class="col-md-4 control-label" style="font-size:1.5em;text-align:center;letter-spacing:1.3px;">部署</label>
+                    <div class="col-md-8">
                         <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <label class="col-md-1 control-label">OS</label>
-                    <div class="col-lg-3">
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>SD事業部</option>
+                            <option>SD事業部2</option>
+                            <option>SD事業部3</option>
+                            <option>SD事業部4</option>
+                            <option>SD事業部5</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-1 col-xs-12 control-label">CPU</label>
-                    <div class="col-lg-3">
-                        <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                    <label class="col-md-1 col-xs-12 control-label">Office</label>
-                    <div class="col-lg-3">
-                        <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                    <label class="col-md-1 col-xs-12 control-label">メモリ</label>
-                    <div class="col-lg-3">
-                        <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
+                <label class="col-md-4 control-label" style="font-size:1.5em;text-align:center;letter-spacing:1.3px;">保管場所</label>
+                <div class="col-md-8">
+                        <input type="text" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-1 col-xs-12 control-label">HDD/SSD</label>
-                    <div class="col-lg-3">
-                        <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                </div>
 
-                <div class="form-group">
-                  <label class="checkbox-inline">
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                    使用中
-                  </label>
-                  <label class="checkbox-inline">
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                    未使用
-                  </label>
-                  <label class="checkbox-inline">
-                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2">
-                    全て
-                  </label>
+                <div class="radio">
+                      <div class="row">
+                      <div class="col-md-4">
+                        <p  style="padding-left:136px;padding-bottom:30px;font-size:1.5em;text-align:left;letter-spacing:1.3px;">利用状況</p>
+                        </div>
+                        <div class="col-md-8">
+                       <label style="padding-left: 28px;">
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                        使用中
+                       </label>
+                        <label style="padding-left: 85px;">
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        未使用
+                        </label>
+                        <label style="padding-left: 85px;">
+                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2">
+                        全て
+                        </label>
+                        </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="form-group">
+                <div class="row">
+                        <div class="col-md-12" style="text-align:center;">                
+                        <button type="submit" class="btn btn-primary btn-round">登録</button>
+</div>
+</div>
+                </div>  
+    </section>
+</section>
 
 @endsection
 
