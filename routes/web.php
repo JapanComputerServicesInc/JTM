@@ -33,9 +33,8 @@ Route::prefix('admin')->group(function () {
   Route::get('/terminal/list','AdminTerminalIndexController@index')->name('terminal_index');
 
   // 端末新規登録
-  Route::get('/terminal/new',function(){
-    return view('terminal_new');
-  });
+  Route::get('/terminal/new','AdminTerminalNewController@new')->name('terminal_new');
+  Route::post('/terminal/create','AdminTerminalNewController@create')->name('terminal_create');
 
   // 端末新規登録確認
   Route::get('/terminal/check',function(){
