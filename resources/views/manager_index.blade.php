@@ -17,7 +17,7 @@
                     <label class="col-md-1 control-label">保管場所</label>
                     <div class="col-lg-3">
                         <select name="depository" class="form-control">
-                            <option value="{{$depositories->id}}">-</option>
+                            <option>-</option>
                             @foreach ($depositories as $depository)
                                 <option value="{{$depository->id}}">{{$depository ->depository}}</option>
                             @endforeach
@@ -26,7 +26,7 @@
                     <label class="col-md-1 control-label">OS</label>
                     <div class="col-lg-3">
                         <select name="os" class="form-control">
-                            <option value="{{$oss->id}}">-</option>
+                            <option >-</option>
                             @foreach ($oss as $os)
                                 <option value="{{$os ->id}}">{{$os ->os}}</option>
                             @endforeach
@@ -37,7 +37,7 @@
                     <label class="col-md-1 col-xs-12 control-label">CPU</label>
                     <div class="col-lg-3">
                         <select name"cpu" class="form-control">
-                            <option value="{{$cpus->id}}">-</option>
+                            <option >-</option>
                             @foreach ($cpus as $cpu)
                                 <option value="{{$cpu ->id}}">{{$cpu ->cpu}}</option>
                             @endforeach
@@ -46,7 +46,7 @@
                     <label class="col-md-1 col-xs-12 control-label">Office</label>
                     <div class="col-lg-3">
                         <select name="office_information" class="form-control">
-                            <option value="{{$office_informations->id}}">-</option>
+                            <option >-</option>
                             @foreach ($office_informations as $office_information)
                                 <option value="{{$office_information ->id}}">{{$office_information ->name}}</option>
                             @endforeach
@@ -55,7 +55,7 @@
                     <label class="col-md-1 col-xs-12 control-label">メモリ</label>
                     <div class="col-lg-3">
                         <select name"memory" class="form-control">
-                            <option value="{{$memories->id}}">-</option>
+                            <option >-</option>
                             @foreach ($memories as $memory)
                                 <option value="{{$memory ->id}}">{{$memory ->memory}}</option>
                             @endforeach
@@ -66,7 +66,7 @@
                     <label class="col-md-1 col-xs-12 control-label">HDD/SSD</label>
                     <div name="hdd" class="col-lg-3">
                         <select class="form-control">
-                            <option value="{{$hdds->id}}">-</option>
+                            <option>-</option>
                             @foreach ($hdds as $hdd)
                                 <option value="{{$hdd ->id}}">{{$hdd ->hdd}}</option>
                             @endforeach
