@@ -12,7 +12,7 @@
                 <form method="POST" action="{{ route('employees.create') }}"> --}} {{--
                     @csrf --}}
                     <div class="form-group">
-                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-check-square"></i>利用状況</label>
+                        <label class="col-lg-2 col-sm-2 control-label">利用状況</label>
                      <div class="radio">
                        <label>
          						    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>使用中
