@@ -14,6 +14,10 @@ class TerminalManagement extends Model
     {
         return $this->belongsTo('App\Cpu');
     }
+    public function depository()
+    {
+        return $this->belongsTo('App\Depository');
+    }
 
     public function employee()
     {

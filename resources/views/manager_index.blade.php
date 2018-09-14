@@ -17,20 +17,17 @@
                     <label class="col-md-1 control-label">保管場所</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            @foreach ($depositories as $depository)
+                                <option value="{{$depository ->id}}">{{$depository ->depository}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <label class="col-md-1 control-label">OS</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                            @foreach ($cpus as $cpu)
-
+                            @foreach ($oss as $os)
+                                <option value="{{$os ->id}}">{{$os ->os}}</option>
                             @endforeach
-                            <option value="{{$cpu ->id}}">{{$cpu ->cpu}}</option>
                         </select>
                     </div>
                 </div>
@@ -38,31 +35,25 @@
                     <label class="col-md-1 col-xs-12 control-label">CPU</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
+                            @foreach ($cpus as $cpu)
+                                <option value="{{$cpu ->id}}">{{$cpu ->cpu}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <label class="col-md-1 col-xs-12 control-label">Office</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
+                            @foreach ($office_infomations as $office_infomation)
+                                <option value="{{$office_infomation ->id}}">{{$office_infomation ->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <label class="col-md-1 col-xs-12 control-label">メモリ</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                            @foreach ($memories as $memory)
+                                <option value="{{$memory ->id}}">{{$memory ->memory}}</option>
+                            @endforeach
                       </select>
                     </div>
                 </div>
@@ -70,11 +61,9 @@
                     <label class="col-md-1 col-xs-12 control-label">HDD/SSD</label>
                     <div class="col-lg-3">
                         <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                            @foreach ($hdds as $hdd)
+                                <option value="{{$hdd ->id}}">{{$hdd ->hdd}}</option>
+                            @endforeach
                       </select>
                     </div>
                 </div>
@@ -128,18 +117,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="#">1</a></td>
-                        <td><span class="label label-success label-mini">使用中</span></td>
-                        <td class="hidden-phone"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @foreach ($terminal_managements as $terminal_management)
+                        <tr>
+                            <td><a href="#">{{$terminal_management->id}}</a></td>
+                            <td><span class="label label-success label-mini">使用中</span></td>
+                            <td class="hidden-phone">{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                            <td>{{$terminal_management->pc_name}}</td>
+                        </tr>
+                    @endforeach ($variable as $key => $value)
+
+
                     <tr>
                         <td><a href="#">2</a></td>
                         <td><span class="label label-danger label-mini">未使用</span></td>
