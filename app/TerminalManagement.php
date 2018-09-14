@@ -16,12 +16,12 @@ class TerminalManagement extends Model
     }
     public function depository()
     {
-        return $this->belongsTo('App\Depository');
+        return $this->belongsTo('App\Depository', 'depositories_id', 'id');
     }
 
     public function employee()
     {
-        return $this->belongsTo('App\Employee');
+        return $this->belongsTo('App\Employee', 'employees_id', 'id');
     }
     public function hdd()
     {
@@ -29,11 +29,11 @@ class TerminalManagement extends Model
     }
     public function memory()
     {
-        return $this->belongsTo('App\Memory');
+        return $this->belongsTo('App\Memory', 'memories_id', 'id');
     }
     public function office_info()
     {
-        return $this->belongsTo('App\OfficeInformation');
+        return $this->belongsTo('App\OfficeInformation','office_info_id' ,'id');
     }
     public function os()
     {
@@ -45,7 +45,7 @@ class TerminalManagement extends Model
     }
     public function terminal_info()
     {
-        return $this->belongsTo('App\TerminalInformation');
+        return $this->belongsTo('App\TerminalInformation', 'terminal_info_id', 'id');
     }
 
 }
