@@ -22,9 +22,7 @@
                     </div>
                    </div>
 
-
-
-                    <div class="form-group">
+            <div class="form-group">
                         <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-laptop"></i>ホスト名</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control">
