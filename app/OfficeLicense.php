@@ -10,8 +10,8 @@ class OfficeLicense extends Model
         'name'
     ];
 
-    public function officeInfo()
+    public function officeInformation()
     {
-        return $this->hasMany('App\OfficeInfo');
+        return $this->hasMany('App\officeInformation');
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OfficeInfomation extends Model
+class OfficeInformation extends Model
 {
     protected $fillable = [
         'name','office_licenses_id'

@@ -33,7 +33,7 @@ class TerminalManagement extends Model
     }
     public function office_info()
     {
-        return $this->belongsTo('App\OfficeInfomation');
+        return $this->belongsTo('App\OfficeInformation');
     }
     public function os()
     {
@@ -45,7 +45,7 @@ class TerminalManagement extends Model
     }
     public function terminal_info()
     {
-        return $this->belongsTo('App\TerminalInfomation');
+        return $this->belongsTo('App\TerminalInformation');
     }
 
 }
