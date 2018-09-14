@@ -47,9 +47,7 @@ Route::prefix('admin')->group(function () {
   });
 
   // 端末編集
-  Route::get('/terminal/edit',function(){
-    return view('terminal_edit');
-  });
+  Route::get('/terminal/edit','AdminTerminalEditController@Edit')->name('terminal_edit');
 
   // 端末編集
   Route::get('/terminal/edit/check',function(){
