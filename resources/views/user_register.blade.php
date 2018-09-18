@@ -21,12 +21,11 @@
             <div class="form-group">
               <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">部署</label>
                 <div class="col-md-8">
-                  <select class="form-control">
-                    <option>SD事業部</option>
-                    <option>SD事業部2</option>
-                    <option>SD事業部3</option>
-                    <option>SD事業部4</option>
-                    <option>SD事業部5</option>
+                  <select class="form-control" name="department">
+                    <option>-</option>
+                    @foreach($departments as $department)
+                      <option value="{{$department->id}}">{{$department->name}}</option>
+                    @endforeach
                   </select>
                 </div>
              </div>
@@ -51,7 +50,7 @@
                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                         未使用
                       </label>
-                      <p class="text-danger">返却する場合は</p>
+                      <p class="text-danger">返却する場合は未使用を選択して、登録してください。</p>
                     </div>
                 </div>
             </div>
