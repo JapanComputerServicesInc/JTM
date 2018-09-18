@@ -23,45 +23,52 @@ class AdminTerminalIndexController extends Controller
         $office_informations = OfficeInformation::all();
         $memories = Memory::all();
         $hdds = Hdd::all();
-        $status = Status::all();
+        $statuses = Status::all();
         $terminal_managements = TerminalManagement::all();
 
-        return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','status','terminal_managements']));
+        return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','statuses','terminal_managements']));
     }
 
     public function search(Request $request)
     {
-        $depository = $request->input('depository');
-        $employee = $request->input('employee');
-        $status1 = $request->input('optionsRadios1');
-        $status2 = $request->input('optionsRadios2');
-        $status3 = $request->input('optionsRadios3');
-        $os = $request->input('os');
-        $cpu = $request->input('cpu');
-        $office_informations = $request->input('office_information');
-        $memory = $request->input('memory');
-        $hdd = $request->input('hdd');
+        $requestParam = $request->all();
 
         $cpus = Cpu::all();
         $oss = Os::all();
-        $depositories = Depository::all();
+        $depositories = Depository::pluck('depository', 'id');
         $office_informations = OfficeInformation::all();
         $memories = Memory::all();
         $hdds = Hdd::all();
-        $status = Status::all();
+        $statuses = Status::all();
 
         $terminal_managements = TerminalManagement::
-        where('depositories_id', '=', $depository)
-            ->orwhere('employees_id', '=', $employee)
-            ->orwhere('os_id', '=', $os)
-            ->orwhere('cpu_id', '=', $cpu)
-            ->orwhere('office_info_id', '=', $office_informations)
-            ->orwhere('memories_id', '=', $memory)
-            ->orwhere('hdd_id', '=', $hdd)
-            ->orwhere('status_id', '=', $status1)
-            ->orwhere('status_id', '=', $status2)
-            ->orwhere('status_id', '=', $status3)
+        where(function ($query) use($requestParam) {
+            if (isset($requestParam['depository'])) {
+                $query->where('depositories_id', '=', $requestParam['depository']);
+            }
+            if (isset($requestParam['employee'])) {
+                $query->where('employees_id', '=', $requestParam['employee']);
+            }
+            if (isset($requestParam['os'])) {
+                $query->where('os_id', '=', $requestParam['os']);
+            }
+            if (isset($requestParam['cpu'])) {
+                $query->where('cpu_id', '=', $requestParam['cpu']);
+            }
+            if (isset($requestParam['office_information'])) {
+                $query->where('office_info_id', '=', $requestParam['office_information']);
+            }
+            if (isset($requestParam['memory'])) {
+                $query->where('memories_id', '=', $requestParam['memory']);
+            }
+            if (isset($requestParam['hdd'])) {
+                $query->where('hdd_id', '=', $requestParam['hdd']);
+            }
+            // if (isset($requestParam['hdd'])) {
+            //     $query->where('status_id', '=', $requestParam['hdd']);
+            // }
+        })
         ->get();
-        return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','status','terminal_managements']));
+        return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','statuses','terminal_managements']));
     }
 }
