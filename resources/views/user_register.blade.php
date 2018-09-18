@@ -50,7 +50,7 @@
                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                         未使用
                       </label>
-                      <p class="text-danger">返却する場合は未使用を選択して、登録してください。</p>
+                      <p class="text-danger" style="padding-top:20px;padding-left:12px;font-size:1.3em;">返却する場合は未使用を選択して、登録してください。</p>
                     </div>
                 </div>
             </div>
