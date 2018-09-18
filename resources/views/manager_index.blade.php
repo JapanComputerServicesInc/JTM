@@ -26,7 +26,7 @@
                     <label class="col-md-1 control-label">OS</label>
                     <div class="col-lg-3">
                         <select name="os" class="form-control">
-                            <option >-</option>
+                            <option>-</option>
                             @foreach ($oss as $os)
                                 <option value="{{$os ->id}}">{{$os ->os}}</option>
                             @endforeach
