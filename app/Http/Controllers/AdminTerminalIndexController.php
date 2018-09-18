@@ -50,18 +50,17 @@ class AdminTerminalIndexController extends Controller
         $hdds = Hdd::all();
         $status = Status::all();
 
-        $terminal_managements = TerminalManagement::where([
-            ['depositories_id', '=', $depository],
-            ['employees_id', '=', $employee],
-            ['os_id', '=', $os],
-            ['cpu_id', '=', $cpu],
-            ['office_info_id', '=', $office_informations],
-            ['memories_id', '=', $memory],
-            ['hdd_id', '=', $hdd],
-            ['status_id', '=', $status1],
-            ['status_id', '=', $status2],
-            ['status_id', '=', $status3],
-        ])
+        $terminal_managements = TerminalManagement::
+        where('depositories_id', '=', $depository)
+            ->orwhere('employees_id', '=', $employee)
+            ->orwhere('os_id', '=', $os)
+            ->orwhere('cpu_id', '=', $cpu)
+            ->orwhere('office_info_id', '=', $office_informations)
+            ->orwhere('memories_id', '=', $memory)
+            ->orwhere('hdd_id', '=', $hdd)
+            ->orwhere('status_id', '=', $status1)
+            ->orwhere('status_id', '=', $status2)
+            ->orwhere('status_id', '=', $status3)
         ->get();
         return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','status','terminal_managements']));
     }
