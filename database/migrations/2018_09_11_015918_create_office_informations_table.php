@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOfficeInfoTable extends Migration
+class CreateOfficeInformationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOfficeInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('office_info', function (Blueprint $table) {
+        Schema::create('office_informations', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
@@ -31,6 +31,6 @@ class CreateOfficeInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('office_info');
+        Schema::dropIfExists('office_informations');
     }
 }

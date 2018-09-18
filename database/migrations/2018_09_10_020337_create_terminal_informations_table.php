@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTerminalInfoTable extends Migration
+class CreateTerminalInformationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTerminalInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('terminal_info', function (Blueprint $table) {
+        Schema::create('terminal_informations', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
@@ -29,6 +29,6 @@ class CreateTerminalInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('terminal_info');
+        Schema::dropIfExists('terminal_informations');
     }
 }

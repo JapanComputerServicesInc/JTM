@@ -30,14 +30,12 @@ Route::get('/userlist',function(){
 Route::prefix('admin')->group(function () {
 
   // 一覧
-  Route::get('/terminal/list', function () {
-      return view('manager_index');
-  });
+  Route::get('/terminal/list','AdminTerminalIndexController@index')->name('terminal_index');
+  Route::get('/terminal/list/search','AdminTerminalIndexController@search')->name('terminal_search');
 
   // 端末新規登録
-  Route::get('/terminal/new',function(){
-    return view('terminal_new');
-  });
+  Route::get('/terminal/new','AdminTerminalNewController@new')->name('terminal_new');
+  Route::post('/terminal/create','AdminTerminalNewController@create')->name('terminal_create');
 
   // 端末新規登録確認
   Route::get('/terminal/check',function(){
@@ -50,9 +48,7 @@ Route::prefix('admin')->group(function () {
   });
 
   // 端末編集
-  Route::get('/terminal/edit',function(){
-    return view('terminal_edit');
-  });
+  Route::get('/terminal/edit','AdminTerminalEditController@Edit')->name('terminal_edit');
 
   // 端末編集
   Route::get('/terminal/edit/check',function(){
