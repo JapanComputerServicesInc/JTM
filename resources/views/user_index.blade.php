@@ -51,6 +51,7 @@
                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                         未使用
                       </label>
+                      <p class="text-danger">返却する場合は</p>
                     </div>
                 </div>
             </div>
