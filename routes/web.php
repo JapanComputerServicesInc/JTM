@@ -20,9 +20,7 @@ Route::get('/', function () {
 });
 
 // 利用者
-Route::get('/terminal/user/list',function(){
-  return view('user_index');
-});
+Route::get('/terminal/user_register/{id}/edit', 'UserRegisterController@edit')->name('user_register_edit');
 
 
 
