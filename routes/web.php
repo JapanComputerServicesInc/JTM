@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 // 利用者
-Route::get('/userlist',function(){
+Route::get('/terminal/user/list',function(){
   return view('user_index');
 });
 
