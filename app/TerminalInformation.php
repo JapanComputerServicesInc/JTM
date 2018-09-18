@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TerminalInfomation extends Model
+class TerminalInformation extends Model
 {
     protected $fillable = [
         'name','model_number','producer'
