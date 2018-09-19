@@ -8,7 +8,7 @@
         <div class="form-panel">
             <h4 class="mb">検索</h4>
             <hr>
-            <form action="{{ route('terminal_search') }}" class="form-horizontal style-form" method="get">
+            {!! Form::open(['route' => ['terminal_search'], 'method' => 'post', 'class' => 'form-horizontal style-form']) !!}
                 <div class="form-group">
                     <label class="col-sm-5 col-md-5 col-lg-1 control-label">氏名</label>
                     <div class="col-lg-3">
@@ -16,17 +16,12 @@
                     </div>
                     <label class="col-md-1 control-label">保管場所</label>
                     <div class="col-lg-3">
-                        <select name="depository" class="form-control">
-                            <option>-</option>
-                            @foreach ($depositories as $depository)
-                                <option value="{{$depository->id}}">{{$depository ->depository}}</option>
-                            @endforeach
-                        </select>
+                        {{ Form::select('depository', $depositories, null, ['placeholder' => '選択してください。', 'class' => 'form-control']) }}
                     </div>
                     <label class="col-md-1 control-label">OS</label>
                     <div class="col-lg-3">
                         <select name="os" class="form-control">
-                            <option>-</option>
+                            <option></option>
                             @foreach ($oss as $os)
                                 <option value="{{$os ->id}}">{{$os ->os}}</option>
                             @endforeach
@@ -34,28 +29,28 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-1 col-xs-12 control-label">CPU</label>
-                    <div class="col-lg-3">
-                        <select name"cpu" class="form-control">
-                            <option >-</option>
-                            @foreach ($cpus as $cpu)
-                                <option value="{{$cpu ->id}}">{{$cpu ->cpu}}</option>
-                            @endforeach
-                        </select>
-                    </div>
                     <label class="col-md-1 col-xs-12 control-label">Office</label>
                     <div class="col-lg-3">
                         <select name="office_information" class="form-control">
-                            <option >-</option>
+                            <option></option>
                             @foreach ($office_informations as $office_information)
                                 <option value="{{$office_information ->id}}">{{$office_information ->name}}</option>
                             @endforeach
                         </select>
                     </div>
+                    <label class="col-md-1 col-xs-12 control-label">CPU</label>
+                    <div class="col-lg-3">
+                        <select name="cpu" class="form-control">
+                            <option></option>
+                            @foreach ($cpus as $cpu)
+                                <option value="{{$cpu ->id}}">{{$cpu ->cpu}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <label class="col-md-1 col-xs-12 control-label">メモリ</label>
                     <div class="col-lg-3">
-                        <select name"memory" class="form-control">
-                            <option >-</option>
+                        <select name="memory" class="form-control">
+                            <option></option>
                             @foreach ($memories as $memory)
                                 <option value="{{$memory ->id}}">{{$memory ->memory}}</option>
                             @endforeach
@@ -64,9 +59,9 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-1 col-xs-12 control-label">HDD/SSD</label>
-                    <div name="hdd" class="col-lg-3">
-                        <select class="form-control">
-                            <option>-</option>
+                    <div class="col-lg-3">
+                        <select name="hdd" class="form-control">
+                            <option></option>
                             @foreach ($hdds as $hdd)
                                 <option value="{{$hdd ->id}}">{{$hdd ->hdd}}</option>
                             @endforeach
@@ -76,15 +71,16 @@
 
                 <div class="form-group">
                   <label class="checkbox-inline">
-                    <input type="radio" name="optionsRadios1" id="optionsRadios1" value=1>
+                      {{ Form::radio('category_id', '1') }}
+                    <input type="radio" name="optionsRadios" id="optionsRadios" value="1">
                     使用中
                   </label>
                   <label class="checkbox-inline">
-                    <input type="radio" name="optionsRadios2" id="optionsRadios2" value=2>
+                    <input type="radio" name="optionsRadios" id="optionsRadios" value="2">
                     未使用
                   </label>
                   <label class="checkbox-inline">
-                    <input type="radio" name="optionsRadios3[]" id="optionsRadios3" value=[1,2]>
+                    <input type="radio" name="optionsRadios" id="optionsRadios" value="">
                     全て
                   </label>
                 </div>
@@ -94,7 +90,7 @@
                     <button type="button" class="btn btn-default btn-round">クリア</button>
                   </div>
                 </div>
-            </form>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
