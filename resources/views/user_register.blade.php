@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="content">
- <section class="wrapper">
+<section id="main-content">
+ <section class="user_regstWrap">
                      
 
 
 <div class="row mt">
-  <div class="col-lg-12 col-xs-12">
+  <div class="col-lg-12">
     <div class="form-panel">
       <h4 class="mb" style="font-size:2.5em;padding-top: 10px;">利用状況登録画面</h4>
         <hr>
