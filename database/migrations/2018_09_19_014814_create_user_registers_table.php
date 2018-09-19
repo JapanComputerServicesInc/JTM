@@ -16,6 +16,17 @@ class CreateUserRegistersTable extends Migration
         Schema::create('user_registers', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
+            $table->integer('departments_id')->unsigned();
+            $table->foreign('departments_id')
+                  ->references('id')
+                  ->on('departments');
+
+            $table->integer('depositories_id')->unsigned();
+            $table->foreign('depositories_id')
+                  ->references('id')
+                  ->on('depositories');
+            
         });
     }
 

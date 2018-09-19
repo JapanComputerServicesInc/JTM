@@ -12,8 +12,8 @@ class OsTableSeeder extends Seeder
     public function run()
     {
         DB::table('os')->insert([
-             ['os' => 'Windows 7 Professional 64bit'],
-             ['os' => 'Windows 7 Professional 32bit']
+             ['name' => 'Windows 7 Professional 64bit'],
+             ['name' => 'Windows 7 Professional 32bit']
          ]);
     }
 }

@@ -35,8 +35,8 @@ class CreateTerminalManagementsTable extends Migration
             $table->integer('os_id')->nullable($value = true);
             $table->integer('memories_id')->nullable($value = true);
             $table->integer('employees_id')->nullable($value = true);
-            $table->integer('office_info_id')->nullable($value = true);
-            $table->integer('terminal_info_id')->nullable($value = true);
+            $table->integer('office_informations_id')->nullable($value = true);
+            $table->integer('terminal_informations_id')->nullable($value = true);
         });
     }
 

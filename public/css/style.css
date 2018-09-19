@@ -2243,14 +2243,10 @@ label {
 }
 .user_regstWrap{
     display: inline-block;
-    margin-top:180px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
     padding-top: 0px;
     width: 100%;
 }
-@media screen and (min-width:740px) { 
+/* @media screen and (min-width:740px) { 
     .tooltips{
         visibility:hidden
     }
@@ -2264,5 +2260,20 @@ label {
     }
     .form-panel{
         margin:0;
+    }
+    .user_regstWrap{
+        margin-top: 122px;
+        margin-left:0;
+        padding-bottom:0;
+    }
+    .wrapper{
+        padding-left:0;
+        padding-right:0;
+        padding-bottom:0;
+    }
+} */
+@media screen and (max-width:739px) {
+    user-regstWrap{
+        margin-left:0;
     }
 }

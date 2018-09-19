@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cpu extends Model
 {
     protected $fillable = [
-        'cpu'
+        'name'
     ];
 
     public function terminal_Managements()

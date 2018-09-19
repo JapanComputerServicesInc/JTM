@@ -16,7 +16,7 @@ class CreateOsTable extends Migration
         Schema::create('os', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('os');
+            $table->string('name');
         });
     }
 

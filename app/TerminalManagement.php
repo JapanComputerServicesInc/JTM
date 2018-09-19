@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TerminalManagement extends Model
 {
     protected $fillable = [
-        'approval_no', 'pc_name', 'model_name', 'serial_no', 'memo', 'qr_code', 'status_id', 'depositories_id', 'hdd_id', 'cpu_id', 'os_id', 'memories_id', 'employees_id', 'office_info_id', 'terminal_info_id'
+        'approval_no', 'pc_name', 'model_name', 'serial_no', 'memo', 'qr_code', 'status_id', 'depositories_id', 'hdd_id', 'cpu_id', 'os_id', 'memories_id', 'employees_id', 'office_informations_id', 'terminal_informations_id'
     ];
 
     public function cpu()
@@ -33,7 +33,7 @@ class TerminalManagement extends Model
     }
     public function office_info()
     {
-        return $this->belongsTo('App\OfficeInformation','office_info_id' ,'id');
+        return $this->belongsTo('App\OfficeInformation','office_informations_id' ,'id');
     }
     public function os()
     {
@@ -45,7 +45,7 @@ class TerminalManagement extends Model
     }
     public function terminal_info()
     {
-        return $this->belongsTo('App\TerminalInformation', 'terminal_info_id', 'id');
+        return $this->belongsTo('App\TerminalInformation', 'terminal_informations_id', 'id');
     }
 
 }

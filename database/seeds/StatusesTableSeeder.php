@@ -12,8 +12,8 @@ class StatusesTableSeeder extends Seeder
     public function run()
     {
         DB::table('statuses')->insert([
-             ['status' => '使用中'],
-             ['status' => '未使用']
+             ['name' => '使用中'],
+             ['name' => '未使用']
          ]);
     }
 }

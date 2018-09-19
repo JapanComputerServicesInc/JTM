@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="main-content">
  <section class="user_regstWrap">
                      
 
@@ -9,7 +8,7 @@
 <div class="row mt">
   <div class="col-lg-12">
     <div class="form-panel">
-      <h4 class="mb" style="font-size:2.5em;padding-top: 10px;">利用状況登録画面</h4>
+      <h1 class="mb">利用状況登録画面</h1>
         <hr>
           <form class="form-horizontal style-form" method="get">
             <div class="form-group">
@@ -55,7 +54,7 @@
                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                         未使用
                       </label>
-                      <p class="text-danger" style="padding-top:20px;padding-left:12px;font-size:1.3em;">返却する場合は未使用を選択して、登録してください。</p>
+                      <p class="text-danger" style="padding-top:20px;padding-left:12px;padding-right:12px;font-size:1.3em;">返却する場合は未使用を選択して、登録してください。</p>
                     </div>
                 </div>
             </div>
@@ -68,7 +67,6 @@
               </div>
             </div>  
     </section>
-</section>
 
 @endsection
 

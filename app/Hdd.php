@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Hdd extends Model
 {
     protected $fillable = [
-        'hdd'
+        'name'
     ];
 
     public function terminal_Managements()

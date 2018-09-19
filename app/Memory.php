@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Memory extends Model
 {
     protected $fillable = [
-        'memory'
+        'name'
     ];
 
     public function terminal_Managements()
