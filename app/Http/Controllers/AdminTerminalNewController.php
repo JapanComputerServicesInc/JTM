@@ -8,6 +8,7 @@ use App\Employee;
 use App\Depository;
 use App\TerminalInformation;
 use App\Memory;
+use App\Cpu;
 use App\Hdd;
 use App\Os;
 use App\OfficeInformation;
@@ -22,12 +23,12 @@ class AdminTerminalNewController extends Controller
         $depositories = Depository::all();
         $terminal_info= TerminalInformation::all();
         $memories = Memory::all();
+        $cpu = Cpu::all();
         $hdd = Hdd::all();
         $os = Os::all();
         $office_info = OfficeInformation::all();
 
-        return view('terminal_new', compact(['employees','depositories','terminal_info','memories','hdd','os','office_info']));
-
+        return view('terminal_new', compact(['employees','depositories','terminal_info','memories','cpu','hdd','os','office_info']));
     }
 
 
@@ -39,49 +40,47 @@ class AdminTerminalNewController extends Controller
     */
     public function create(TerminalCreateRequest $request)
     {
-        $status = $request->input('status');
+        $status_id = $request->input('status');
         $pc_name = $request->input('pc_name');
         $approval_no = $request->input('approval_no');
-        $employee_name = $request->input('employee_name');
-        $depository = $request->input('depository');
-        $producer = $request->input('producer');
-        $product_name = $request->input('product_name');
+        $employees_id = $request->input('employee_name');
+        $depositories_id = $request->input('depository');
+        $terminal_info_id = $request->input('product_name');
         $serial_no = $request->input('serial_no');
         $model_name = $request->input('model_name');
-        $cpu = $request->input('cpu');
-        $memory = $request->input('memory');
-        $hdd = $request->input('hdd');
-        $os = $request->input('os');
-        $office_info = $request->input('office_info');
+        $cpu_id = $request->input('cpu');
+        $memories_id = $request->input('memory');
+        $hdd_id = $request->input('hdd');
+        $os_id = $request->input('os');
+        $office_info_id = $request->input('office_info');
         $memo = $request->input('memo');
         $qr_code = $request->input('qr_code');
 
         $terminal_management = TerminalManagement::create([
-            'status_id' => $status,
+            'status_id' => $status_id,
             'pc_name' => $pc_name,
             'approval_no' => $approval_no,
-            'employees_id' => $employee_name,
-
-
-                'department' => $department,
-
-            'depositories_id' => $depository,
-
-            'producer' => $producer,
-            'product_name' => $product_name,
-
+            'employees_id' => $employees_id,
+            'depositories_id' => $depositories_id,
+            'depositories_id' => $depositories_id,
+            'terminal_info_id' => $terminal_info_id,
             'serial_no' => $serial_no,
             'model_name' => $model_name,
-            'cpu_id' => $cpu,
-            'memories_id' => $memory,
-            'hdd_id' => $hdd,
-            'os_id' => $os,
-            'office_info_id' => $office_info,
+            'cpu_id' => $cpu_id,
+            'memories_id' => $memories_id,
+            'hdd_id' => $hdd_id,
+            'os_id' => $os_id,
+            'office_info_id' => $office_info_id,
             'memo' => $memo,
             'qr_code' => $qr_code,
         ]);
 
-     return redirect()->route('terminal_create', ['id'=>$terminal_management->id]);
+        return redirect()->route('terminal_check', ['id'=>$terminal_management->id]);
+    }
 
+    public function check(TerminalCreateRequest $request)
+    {
+        $data = $request->all();
+        return view('terminal_check')->with($data);
     }
 }

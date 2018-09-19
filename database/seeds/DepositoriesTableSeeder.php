@@ -12,10 +12,10 @@ class DepositoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('depositories')->insert([
-             ['depository' => '本社4F キャビネット(C22)'],
-             ['depository' => '本社4F'],
-             ['depository' => '朝霞事業所'],
-             ['depository' => '本社7F']
+             ['name' => '本社4F キャビネット(C22)'],
+             ['name' => '本社4F'],
+             ['name' => '朝霞事業所'],
+             ['name' => '本社7F']
          ]);
     }
 }

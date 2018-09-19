@@ -16,7 +16,7 @@ class CreateDepositoriesTable extends Migration
         Schema::create('depositories', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('depository');
+            $table->string('name');
         });
     }
 

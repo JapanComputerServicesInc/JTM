@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Depository extends Model
 {
     protected $fillable = [
-        'depository'
+        'name'
     ];
 
     public function terminal_Managements()

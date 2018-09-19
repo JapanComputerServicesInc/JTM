@@ -1,15 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="content">
- <section class="wrapper">
+ <section class="user_regstWrap">
                      
 
 
 <div class="row mt">
-  <div class="col-lg-12 col-xs-12">
+  <div class="col-lg-12">
     <div class="form-panel">
-      <h4 class="mb" style="font-size:2.5em;padding-top: 10px;">利用状況登録画面</h4>
+      <h1 class="mb">利用状況登録画面</h1>
         <hr>
           <form class="form-horizontal style-form" method="get">
             <div class="form-group">
@@ -22,7 +21,7 @@
               <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">部署</label>
                 <div class="col-md-8">
                   <select class="form-control" name="department">
-                    <option>-</option>
+                    <option></option>
                     @foreach($departments as $department)
                       <option value="{{$department->id}}">{{$department->name}}</option>
                     @endforeach
@@ -32,7 +31,12 @@
              <div class="form-group">
                <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">保管場所</label>
                  <div class="col-md-8">
-                 <input type="text" class="form-control">
+                 <select class="form-control" name="depository">
+                 <option></option>
+                    @foreach($depositories as $depository)
+                      <option value="{{$depository->id}}">{{$depository->depository}}</option>
+                    @endforeach
+                  </select>
                  </div>
              </div>
              <div class="form-group">
@@ -50,7 +54,7 @@
                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                         未使用
                       </label>
-                      <p class="text-danger" style="padding-top:20px;padding-left:12px;font-size:1.3em;">返却する場合は未使用を選択して、登録してください。</p>
+                      <p class="text-danger" style="padding-top:20px;padding-left:12px;padding-right:12px;font-size:1.3em;">返却する場合は未使用を選択して、登録してください。</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +67,6 @@
               </div>
             </div>  
     </section>
-</section>
 
 @endsection
 

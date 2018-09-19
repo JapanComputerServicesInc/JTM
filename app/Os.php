@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Os extends Model
 {
     protected $fillable = [
-        'os'
+        'name'
     ];
 
     public function terminal_Managements()

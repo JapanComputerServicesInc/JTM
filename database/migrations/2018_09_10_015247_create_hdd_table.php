@@ -16,7 +16,7 @@ class CreateHddTable extends Migration
         Schema::create('hdd', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('hdd');
+            $table->string('name');
         });
     }
 

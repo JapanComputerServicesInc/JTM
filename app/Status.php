@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     protected $fillable = [
-        'status'
+        'name'
     ];
 
     public function terminal_Managements()

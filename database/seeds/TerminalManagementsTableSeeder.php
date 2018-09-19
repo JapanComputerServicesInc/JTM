@@ -23,8 +23,8 @@ class TerminalManagementsTableSeeder extends Seeder
                 'os_id' =>'1',
                 'memories_id'=>'1',
                 'employees_id' =>'1',
-                'office_info_id' =>'1',
-                'terminal_info_id' =>'1'
+                'office_informations_id' =>'1',
+                'terminal_informations_id' =>'1'
                 ],
                 ['approval_no' =>'JT33001',
                 'pc_name' => 'J1NS1110Q6',
@@ -37,8 +37,8 @@ class TerminalManagementsTableSeeder extends Seeder
                 'os_id' =>'2',
                 'memories_id'=>'2',
                 'employees_id' =>'2',
-                'office_info_id' =>'2',
-                'terminal_info_id' =>'2'
+                'office_informations_id' =>'2',
+                'terminal_informations_id' =>'2'
                 ]
          ]);
 
