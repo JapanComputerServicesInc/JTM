@@ -12,7 +12,7 @@ class Employee extends Model
 
     public function department()
     {
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Department', 'departments_id', 'id');
     }
 
     public function terminal_Managements()
