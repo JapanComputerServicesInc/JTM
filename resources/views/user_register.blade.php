@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="content">
- <section class="wrapper">
+<section id="main-content">
+ <section class="user_regstWrap">
                      
 
 
 <div class="row mt">
-  <div class="col-lg-12 col-xs-12">
+  <div class="col-lg-12">
     <div class="form-panel">
       <h4 class="mb" style="font-size:2.5em;padding-top: 10px;">利用状況登録画面</h4>
         <hr>
@@ -22,7 +22,7 @@
               <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">部署</label>
                 <div class="col-md-8">
                   <select class="form-control" name="department">
-                    <option>-</option>
+                    <option></option>
                     @foreach($departments as $department)
                       <option value="{{$department->id}}">{{$department->name}}</option>
                     @endforeach
@@ -32,7 +32,12 @@
              <div class="form-group">
                <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">保管場所</label>
                  <div class="col-md-8">
-                 <input type="text" class="form-control">
+                 <select class="form-control" name="depository">
+                 <option></option>
+                    @foreach($depositories as $depository)
+                      <option value="{{$depository->id}}">{{$depository->depository}}</option>
+                    @endforeach
+                  </select>
                  </div>
              </div>
              <div class="form-group">
