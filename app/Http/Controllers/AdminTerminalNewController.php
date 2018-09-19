@@ -63,14 +63,14 @@ class AdminTerminalNewController extends Controller
             'employees_id' => $employees_id,
             'depositories_id' => $depositories_id,
             'depositories_id' => $depositories_id,
-            'terminal_info_id' => $terminal_info_id,
+            'terminal_informations_id' => $terminal_info_id,
             'serial_no' => $serial_no,
             'model_name' => $model_name,
             'cpu_id' => $cpu_id,
             'memories_id' => $memories_id,
             'hdd_id' => $hdd_id,
             'os_id' => $os_id,
-            'office_info_id' => $office_info_id,
+            'office_informations_id' => $office_info_id,
             'memo' => $memo,
             'qr_code' => $qr_code,
         ]);
@@ -78,9 +78,11 @@ class AdminTerminalNewController extends Controller
         return redirect()->route('terminal_check', ['id'=>$terminal_management->id]);
     }
 
-    public function check(TerminalCreateRequest $request)
+    public function check($id)
     {
-        $data = $request->all();
-        return view('terminal_check')->with($data);
+
+       $terminal_managements['terminal_managements'] = TerminalManagement::all();
+
+       return view('terminal_check', $terminal_managements);
     }
 }

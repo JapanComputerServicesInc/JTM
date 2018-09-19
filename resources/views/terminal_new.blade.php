@@ -53,7 +53,7 @@
                         <select class="form-control" name="depository" value="{{ old('depository') }}" required>
                             <option>選択してください</option>
                             @foreach($depositories as $depository)
-                              <option value="{{$depository->id}}">{{$depository->depository}}</option>
+                              <option value="{{$depository->id}}">{{$depository->name}}</option>
                             @endforeach
                           </select>
                     </div>
@@ -91,7 +91,7 @@
                         <select class="form-control" name="cpu" value="{{ old('cpu') }}">
                         <option>選択してください</option>
                         @foreach($cpu as $c)
-                            <option value="{{$c->id}}">{{$c->cpu}}></option>
+                            <option value="{{$c->id}}">{{$c->name}}></option>
                         @endforeach
                         </select>
                     </div>
@@ -103,7 +103,7 @@
                         <select class="form-control" name="memory" value="{{ old('memory') }}" placeholder="入力してください">
                         <option>選択してください</option>
                         @foreach($memories as $memory)
-                            <option value="{{$memory->id}}">{{$memory->memory}}</option>
+                            <option value="{{$memory->id}}">{{$memory->name}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -115,7 +115,7 @@
                         <select class="form-control" name="hdd" value="{{ old('hdd') }}">
                         <option>選択してください</option>
                         @foreach($hdd as $h)
-                            <option value="{{$h->id}}">{{$h->hdd}}</option>
+                            <option value="{{$h->id}}">{{$h->name}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -127,7 +127,7 @@
                         <select class="form-control" name="os" value="{{ old('os') }}">
                         <option>選択してください</option>
                         @foreach($os as $o)
-                            <option value="{{$o->id}}">{{$o->os}}</option>
+                            <option value="{{$o->id}}">{{$o->name}}</option>
                         @endforeach
                         </select>
                     </div>

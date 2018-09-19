@@ -29,20 +29,19 @@ Route::prefix('admin')->group(function () {
 
   // 一覧
   Route::get('/terminal/list','AdminTerminalIndexController@index')->name('terminal_index');
-  Route::get('/terminal/list/search','AdminTerminalIndexController@search')->name('terminal_search');
+  Route::post('/terminal/list/search','AdminTerminalIndexController@search')->name('terminal_search');
 
   // 端末新規登録
   Route::get('/terminal/new','AdminTerminalNewController@new')->name('terminal_new');
   Route::post('/terminal/create','AdminTerminalNewController@create')->name('terminal_create');
 
   // 端末新規登録確認
-  Route::get('/terminal/check','AdminTerminalNewContoroller@check')->name('terminal_check');
+  Route::get('/terminal/check','AdminTerminalNewController@check')->name('terminal_check');
 
 
   // 端末新規登録完了
-  Route::get('/terminal/complete',function(){
-    return view('terminal_complete');
-  });
+  Route::get('/terminal/complete','AdminTerminalNewController@complete')->name('terminal_complete');
+
 
   // 端末編集
   Route::get('/terminal/edit','AdminTerminalEditController@Edit')->name('terminal_edit');
