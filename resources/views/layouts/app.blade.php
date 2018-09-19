@@ -192,9 +192,9 @@
                     </ul>
                     <!--  notification end -->
                 </div>
-
+<!--
                 <div class="top-menu">
-                    <ul class="nav pull-right top-menu">
+                    <<ul class="nav pull-right top-menu">
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -213,7 +213,9 @@
                         </li>
 
                     </ul>
+    
                 </div>
+    -->
             </header>
             <!--header end-->
 
