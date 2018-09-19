@@ -35,6 +35,8 @@
     <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/chart-master/Chart.js') }}"></script>
+    <script src="{{ asset('js/clear_button.js') }}"></script>
+
 
 </head>
 
@@ -213,7 +215,7 @@
                         </li>
 
                     </ul>
-    
+
                 </div>
     -->
             </header>
