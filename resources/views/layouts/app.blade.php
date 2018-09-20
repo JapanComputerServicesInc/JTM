@@ -10,15 +10,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Overlock+SC" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100" rel="stylesheet">
-    
+
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -34,10 +30,10 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-select.min.css') }}" rel="stylesheet">
+
 
     <script src="{{ asset('js/chart-master/Chart.js') }}"></script>
-    <script src="{{ asset('js/clear_button.js') }}"></script>
-
 
 </head>
 
@@ -236,22 +232,23 @@
 
                         <span class="btn_a">
                         <li class="mt">
-                            <a class="active" href="#">
+                            <a class="active" href="{{route('terminal_new')}}">
                               <i class="fas fa-tachometer-alt"></i>
                               <span>新規</span>
                           </a>
                         </li>
 
                         <li class="sub-menu">
-                            <a href="#">
+                            <a href="{{route('terminal_index')}}">
                               <i class="fa fa-desktop"></i>
                               <span>一覧</span>
-                          </a>
-                            <ul class="sub">
-                                <li><a href="#">一覧1</a></li>
-                                <li><a href="#">一覧2</a></li>
-                                <li><a href="#">一覧3</a></li>
-                            </ul>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="">
+                              <i class="fa fa-desktop"></i>
+                              <span>端末管理</span>
+                            </a>
                         </li>
                         </span>
                         <!--<li class="sub-menu">
@@ -319,10 +316,17 @@
         </section>
     </div>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
     <script src="{{ asset('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/bootstrap-select.min.js') }}" type="text/javascript"></script>
+
     <script>
         /*---LEFT BAR ACCORDION----*/
+
 $(function() {
+    $('select').selectpicker();
     $('#nav-accordion').dcAccordion({
         eventType: 'click',
         autoClose: true,
@@ -399,6 +403,8 @@ var Script = function () {
     $("html").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled:false,  cursorborder: '', zindex: '1000'});
 }();
 </script>
+
+@yield('scripts')
 </body>
 
 </html>
