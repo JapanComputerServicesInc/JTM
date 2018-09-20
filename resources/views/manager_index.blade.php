@@ -65,7 +65,7 @@
                 <div class="row">
                   <div class="col-sm-12 pull-right text-right">
                       {{Form::submit('検索',['class' =>'btn btn-info btn-round'])}}
-                      {{Form::reset('クリア',['class' =>'btn btn-default btn-round', 'id'=>'clearForm'])}}
+                      {{Form::button('クリア',['class' =>'btn btn-default btn-round', 'id'=>'clearForm'])}}
                   </div>
                 </div>
             {!! Form::close() !!}
@@ -120,4 +120,17 @@
 
 
 <!-- /content-panel -->
+@endsection
+
+@section('scripts')
+    <script>
+        $(function(){
+            // 入力値をリセット
+            $('#clearForm').bind('click', function(){
+               $(this.form).find("textarea, :text, select").val("");
+               // $(this.form).find(":checkbox:checked").prop("checked", false);
+               $(this.form).find(":radio[value='']").prop("checked", true);
+           });
+        });
+    </script>
 @endsection
