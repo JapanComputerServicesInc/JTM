@@ -19,14 +19,14 @@ class AdminTerminalNewController extends Controller
     //
     public function new()
     {
-        $employees = Employee::all();
-        $depositories = Depository::all();
+        $employees = Employee::pluck('name','id');
+        $depositories = Depository::pluck('name','id');
         $terminal_info= TerminalInformation::all();
-        $memories = Memory::all();
-        $cpu = Cpu::all();
-        $hdd = Hdd::all();
-        $os = Os::all();
-        $office_info = OfficeInformation::all();
+        $memories = Memory::pluck('name','id');
+        $cpu = Cpu::pluck('name','id');
+        $hdd = Hdd::pluck('name','id');;
+        $os = Os::pluck('name','id');
+        $office_info = OfficeInformation::pluck('name','id');
 
         return view('terminal_new', compact(['employees','depositories','terminal_info','memories','cpu','hdd','os','office_info']));
     }

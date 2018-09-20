@@ -37,12 +37,12 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label"><i class="fa fa-user"></i>氏名</label>
                     <div class="col-md-4">
-                        <select class="form-control" name="employee_name" value="{{ old('employee_name') }}" placeholder = "選択してください" data-live-search="true">
-
+                        {{ Form::select('employee_name', $employees, null, ['placeholder' => '選択してください', 'class' => 'form-control', 'data-live-search' => "true"]) }}
+                        {{-- <select class="form-control" name="employee_name" value="{{ old('employee_name') }}" placeholder = "選択してください" >
                             @foreach($employees as $employee)
                                 <option value="{{$employee->id}}">{{$employee->name.'('.$employee->department->name.')'}}</option>
                             @endforeach
-                        </select>
+                        </select> --}}
                     </div>
                     <label class="col-md-2 control-label"><i class="fa fa-save"></i>保管場所</label>
                     <div class="col-md-4">
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label"><i class="fa fa-save"></i>メモリ</label>
                     <div class="col-md-4">
-                        {{ Form::select('memory', $memories, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
+                        {{ Form::select('memory', $memories, null, ['placeholder' => '選択してください', 'class' => 'form-control', 'data-live-search' => 'true']) }}
                     </div>
                     <label class="col-md-2 control-label"><i class="fa fa-edit"></i>HDD</label>
                     <div class="col-md-4">
