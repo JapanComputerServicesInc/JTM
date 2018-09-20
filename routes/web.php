@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 // 利用者
-Route::get('/terminal/user_register/{id}/edit', 'UserRegisterController@edit')->name('user_register_edit');
+Route::get('/terminal/user_register/J1NL1106Qz/edit', 'UserRegisterController@edit')->name('user_register_edit');
 
 
 

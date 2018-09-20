@@ -189,7 +189,8 @@ hr {
 }
 
 .mb {
-	margin-bottom: 25px;
+    margin-bottom: 25px;
+    font-size: 1.5em;
 }
 
 .ml {
@@ -421,8 +422,8 @@ ul.sidebar-menu li a.active i {
 .wrapper {
     display: inline-block;
     margin-top: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left:15px;
+    padding-right:15px;
     padding-bottom: 15px;
     padding-top: 0px;
     width: 100%;
@@ -2247,6 +2248,8 @@ label {
     padding-top: 0px;
     width: 100%;
 }
+.left{padding-left:15px;}
+.mgn-top-10{margin-top:10px;}
 /* @media screen and (min-width:740px) { 
     .tooltips{
         visibility:hidden
@@ -2274,10 +2277,7 @@ label {
     }
 } */
 @media screen and (max-width:739px) {
-    user-regstWrap{
-        margin-left:0;
-    }
-}
-h1{
-    font-family: 'Noto Sans JP', sans-serif;
+    .sp_mgn_top_20{margin-top:20px;}
+    .pad_15{padding:0 15px 0 15px;}
+    .mgn_top_15{margin-top:15px;}
 }

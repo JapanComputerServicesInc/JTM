@@ -2429,7 +2429,7 @@ input[type="month"].input-lg {
 }
 .radio label,
 .checkbox label {
-  padding-left: 20px;
+  padding-left: 35px;
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
@@ -2449,7 +2449,6 @@ input[type="month"].input-lg {
 .radio-inline,
 .checkbox-inline {
   display: inline-block;
-  padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
   vertical-align: middle;
@@ -2696,8 +2695,8 @@ select[multiple].input-lg {
   min-height: 27px;
 }
 .form-horizontal .form-group {
-  margin-right: -15px;
-  margin-left: -15px;
+ /* margin-right: -15px;
+  margin-left: -15px;*/
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {

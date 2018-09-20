@@ -1,8 +1,8 @@
+
 @extends('layouts.app')
 
 @section('content')
- <section class="user_regstWrap">
-                     
+
 
 
 <div class="row mt">
@@ -10,69 +10,54 @@
     <div class="form-panel">
       <h1 class="mb">利用状況登録画面</h1>
         <hr>
-          <form class="form-horizontal style-form" method="get">
-            <div class="form-group">
-              <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">社員名</label>
-                <div class="col-md-8">
-                  <input type="text" class="form-control">
+        {!! Form::open(['route' => ['terminal_search'], 'method' => 'post', 'class' => 'form-horizontal style-form']) !!}
+          <div class="form-group">
+            <label class="col-sm-2 col-md-4 col-lg-1 control-label">氏名</label>
+              <div class="col-lg-5">
+                {{Form::text('employee',null,['class' => 'form-control'])}}
+              </div>
+              <label class="col-md-1 control-label sp_mgn_top_20">部署</label>
+                <div class="col-lg-5">
+                  {{ Form::select('department', $departments, '', ['placeholder' => '選択してください', 'class' => 'form-control']) }}
                 </div>
-            </div>
-            <div class="form-group">
-              <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">部署</label>
-                <div class="col-md-8">
-                  <select class="form-control" name="department">
-                    <option></option>
-                    @foreach($departments as $department)
-                      <option value="{{$department->id}}">{{$department->name}}</option>
-                    @endforeach
-                  </select>
-                </div>
-             </div>
-             <div class="form-group">
-               <label class="col-md-4 control-label" style="font-size:1.6em;text-align:left;letter-spacing:1.3px;">保管場所</label>
-                 <div class="col-md-8">
-                 <select class="form-control" name="depository">
-                 <option></option>
-                    @foreach($depositories as $depository)
-                      <option value="{{$depository->id}}">{{$depository->depository}}</option>
-                    @endforeach
-                  </select>
-                 </div>
-             </div>
-             <div class="form-group">
-               <div class="radio">
-                 <div class="row">
-                   <div class="col-md-4">
-                     <p  style="padding-left:16px;font-size:1.6em;text-align:left;letter-spacing:1.3px;">利用状況</p>
-                    </div>
-                    <div class="col-md-8">
-                      <label class="label_left" style="padding-left:35px;">
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                        使用中
-                      </label>
-                      <label style="padding-left: 85px;">
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        未使用
-                      </label>
-                      <p class="text-danger" style="padding-top:20px;padding-left:12px;padding-right:12px;font-size:1.3em;">返却する場合は未使用を選択して、登録してください。</p>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-12" style="text-align:center;">                
-                <button type="submit" class="btn btn-primary btn-round">登録</button>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-md-4 col-lg-1 control-label">保管場所</label>
+              <div class="col-lg-5">
+                {{ Form::select('depository', $depositories, '', ['placeholder' => '選択してください', 'class' => 'form-control']) }}
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-md-4 col-lg-1 control-label">使用状況</label>
+              <div class="col-lg-5">
+                <div class="form-group">
+                  <label class="checkbox-inline">
+                    {{ Form::radio('optionsRadios', '1') }}
+                    使用中
+                  </label>
+                  <label class="checkbox-inline">
+                    {{ Form::radio('optionsRadios', '2') }}
+                    未使用
+                  </label>
+                  <label class="checkbox-inline">
+                    {{ Form::radio('optionsRadios', '', true) }}
+                    全て
+                  </label>
+                  <p class="text-danger mgn_top_15">※返却する場合は未使用を選択して、登録してください。</p>
                 </div>
               </div>
-            </div>  
-    </section>
+           </div>
+           <div class="row">
+             <div class="col-sm-12 pull-right text-right">
+               {{Form::submit('登録',['class' =>'btn btn-info btn-round'])}}
+               {{Form::reset('クリア',['class' =>'btn btn-default btn-round', 'id'=>'clearForm'])}}
+             </div>
+           </div>
+           {!! Form::close() !!}     
+        </div>
+    </div>
+</div>
 
+
+<!-- /content-panel -->
 @endsection
-
-
-
-
-
-
-
