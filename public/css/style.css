@@ -17,6 +17,7 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
+    font-family: 'Overlock SC', cursive;
 }
 
 ul li {
@@ -2276,4 +2277,7 @@ label {
     user-regstWrap{
         margin-left:0;
     }
+}
+h1{
+    font-family: 'Noto Sans JP', sans-serif;
 }

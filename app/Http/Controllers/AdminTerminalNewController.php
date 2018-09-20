@@ -78,9 +78,11 @@ class AdminTerminalNewController extends Controller
         return redirect()->route('terminal_check', ['id'=>$terminal_management->id]);
     }
 
-    public function check(TerminalCreateRequest $request)
+    public function check($id)
     {
-        $data = $request->all();
-        return view('terminal_check')->with($data);
+
+       $terminal_managements['terminal_managements'] = TerminalManagement::all();
+
+       return view('terminal_check', $terminal_managements);
     }
 }

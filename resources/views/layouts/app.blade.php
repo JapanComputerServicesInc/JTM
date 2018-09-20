@@ -16,8 +16,9 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <link href="https://fonts.googleapis.com/css?family=Overlock+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100" rel="stylesheet">
+    
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
