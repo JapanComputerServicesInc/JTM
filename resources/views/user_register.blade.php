@@ -10,7 +10,7 @@
     <div class="form-panel">
       <h1 class="mb">利用状況登録画面</h1>
         <hr>
-        {!! Form::open(['route' => ['terminal_search'], 'method' => 'post', 'class' => 'form-horizontal style-form']) !!}
+        {!! Form::open(['route' => ['user_register_update',$pc_name], 'method' => 'put', 'class' => 'form-horizontal style-form']) !!}
           <div class="form-group">
             <label class="col-sm-2 col-md-4 col-lg-1 control-label">氏名</label>
               <div class="col-lg-5">
@@ -38,10 +38,6 @@
                   <label class="checkbox-inline">
                     {{ Form::radio('optionsRadios', '2') }}
                     未使用
-                  </label>
-                  <label class="checkbox-inline">
-                    {{ Form::radio('optionsRadios', '', true) }}
-                    全て
                   </label>
                   <p class="text-danger mgn_top_15">※返却する場合は未使用を選択して、登録してください。</p>
                 </div>

@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 // 利用者
-Route::get('/terminal/user_register/J1NL1106Qz/edit', 'UserRegisterController@edit')->name('user_register_edit');
-
+Route::get('/terminal/user_register/{pc_name}/edit', 'UserRegisterController@edit')->name('user_register_edit');
+Route::put('/teminal/user_register/{pc_name}','UserRegisterController@update')->name('user_register_update');
 
 
 // 管理者
