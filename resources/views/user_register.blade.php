@@ -14,7 +14,7 @@
           <div class="form-group">
             <label class="col-sm-2 col-md-4 col-lg-1 control-label">氏名</label>
               <div class="col-lg-5">
-                {{Form::text('employee',null,['class' => 'form-control'])}}
+                {{Form::text('employee',null,['class' => 'form-control' ,'data-live-search'=>'true'])}}
               </div>
               <label class="col-md-1 control-label sp_mgn_top_20">部署</label>
                 <div class="col-lg-5">
