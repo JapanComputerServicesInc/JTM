@@ -57,13 +57,8 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label"><i class="fa fa-desktop"></i>製品名</label>
                     <div class="col-md-4">
-                        <select class="form-control" name="product_name" value="{{ old('product_name') }}" placeholder = "選択してください" required>
-                        @foreach($terminal_info as $t_i)
-                            <option value="{{$t_i->id}}">{{$t_i->name.'('.$t_i->producer.')'}}</option>
-                        @endforeach
-                        </select>
+                        {{ Form::select('product_name', $terminal_informations, null, ['placeholder' => '選択してください', 'class' => 'form-control', 'data-live-search' => "true"]) }}
                     </div>
-
                     <label class="col-md-2 control-label"><i class="fa fa-list-ol"></i>シリアルナンバー</label>
                     <div class="col-md-4">
                         {{Form::text('serial_no',null,['class' => 'form-control', 'placeholder' => '入力してください','data-live-search' => 'true'])}}

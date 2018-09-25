@@ -102,13 +102,13 @@
                             <td><a href="#">{{$terminal_management->id}}</a></td>
                             <td><span class="@if($terminal_management->status->id ==1)label label-success label-mini @else label label-danger label-mini @endif">{{$terminal_management->status->name}}</span></td>
                             <td>{{$terminal_management->pc_name}}</td>
-                            <td>{{$terminal_management->employee->name}}</td>
+                            @if (isset($terminal_management->employee->name )) <td>{{$terminal_management->employee->name}}</td>@endif
                             <td>{{$terminal_management->depository->name}}</td>
-                            <td>{{$terminal_management->os->name}}</td>
-                            <td>{{$terminal_management->office_info->name}}</td>
-                            <td>{{$terminal_management->cpu->name}}</td>
-                            <td>{{$terminal_management->memory->name}}</td>
-                            <td>{{$terminal_management->hdd->name}}</td>
+                            @if (isset($terminal_management->os->name )) <td>{{$terminal_management->os->name}}</td>@endif
+                            @if (isset($terminal_management->office_info->name )) <td>{{$terminal_management->office_info->name}}</td>@endif
+                            @if (isset($terminal_management->cpu->name )) <td>{{$terminal_management->cpu->name}}</td>@endif
+                            @if (isset($terminal_management->memory->name )) <td>{{$terminal_management->memory->name}}</td>@endif
+                            @if (isset($terminal_management->hdd->name )) <td>{{$terminal_management->hdd->name}}</td>@endif
                         </tr>
                     @endforeach
 

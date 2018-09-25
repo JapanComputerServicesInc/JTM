@@ -19,16 +19,28 @@ class AdminTerminalNewController extends Controller
     //
     public function new()
     {
-        $employees = Employee::pluck('name','id');
+        $employees = Employee::all();
+        foreach ($employees as $employee) {
+            $employee->name = $employee->name.'('.$employee->department->name.')';
+        }
+        // $employees->flatMap(function ($employee) {
+        //     $employee->name = $employee->name.'('.$employee->department->name.')';
+        //     return $employee;
+        // });
+        $employees = $employees->pluck('name','id');
+        $terminal_informations= TerminalInformation::all();
+        foreach ($terminal_informations as $terminal_information) {
+            $terminal_information->name = $terminal_information->name.'('.$terminal_information->producer.')';
+        }
+        $terminal_informations = $terminal_informations->pluck('name','id');
         $depositories = Depository::pluck('name','id');
-        $terminal_info= TerminalInformation::all();
         $memories = Memory::pluck('name','id');
         $cpu = Cpu::pluck('name','id');
         $hdd = Hdd::pluck('name','id');;
         $os = Os::pluck('name','id');
         $office_info = OfficeInformation::pluck('name','id');
 
-        return view('terminal_new', compact(['employees','depositories','terminal_info','memories','cpu','hdd','os','office_info']));
+        return view('terminal_new', compact(['employees','depositories','terminal_informations','memories','cpu','hdd','os','office_info']));
     }
 
 
@@ -74,15 +86,13 @@ class AdminTerminalNewController extends Controller
             'memo' => $memo,
             'qr_code' => $qr_code,
         ]);
-
         return redirect()->route('terminal_check', ['id'=>$terminal_management->id]);
     }
 
     public function check($id)
     {
 
-       $terminal_managements['terminal_managements'] = TerminalManagement::all();
-
-       return view('terminal_check', $terminal_managements);
+       $terminal_management['terminal_management'] = TerminalManagement::find($id);
+       return view('terminal_check', $terminal_management);
     }
 }
