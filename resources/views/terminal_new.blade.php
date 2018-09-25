@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <div class="form-panel">
             <h1 class="mb">端末新規登録</h1>
-            <form class="form-horizontal style-form" method="POST" action="{{ route('terminal_create') }}">
+            <form class="form-horizontal style-form" method="POST" action="{{ route('terminal_check') }}">
                 @csrf
 
                 <div class="form-group">
