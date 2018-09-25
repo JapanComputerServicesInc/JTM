@@ -15,7 +15,7 @@
               </div>
 
               <div class="row text-center" style="padding-top: 50px;">
-                <button type="submit" class="btn btn-round btn-success">一覧へ戻る</button>
+                <button type="button" class="btn btn-round btn-success">一覧へ戻る</button>
               </div>
 
 

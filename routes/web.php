@@ -36,11 +36,11 @@ Route::prefix('admin')->group(function () {
   Route::post('/terminal/create','AdminTerminalNewController@create')->name('terminal_create');
 
   // 端末新規登録確認
-  Route::get('/terminal/check/{id}','AdminTerminalNewController@check')->name('terminal_check');
+  Route::post('/terminal/check','AdminTerminalNewController@check')->name('terminal_check');
 
 
   // 端末新規登録完了
-  Route::get('/terminal/complete','AdminTerminalNewController@complete')->name('terminal_complete');
+  Route::get('/terminal/complete/{id}','AdminTerminalNewController@complete')->name('terminal_complete');
 
 
   // 端末編集
