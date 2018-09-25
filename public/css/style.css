@@ -2286,10 +2286,22 @@ label {
         padding-bottom:0;
     }
 } */
-
 @media screen and (max-width:739px) {
     .sp_mgn_top_20{margin-top:20px;}
     .pad_15{padding:0 15px 0 15px;}
     .mgn_top_15{margin-top:15px;}
     .wrapper{padding-left:60px;}
+}
+@media screen and (max-width:768px) {
+    ul.sidebar-menu{display: none;}
+    a.logo b{padding-left:40px;}
+}
+@media screen and (max-width:460px) {
+    ul.sidebar-menu{display: none;}
+    a.logo b{padding-left:30px;}
+    .wrapper{padding-left:0;padding-right:0;}
+}
+@media screen and (max-width:375px) {
+    a.logo b{padding-left:10px;}
+    .wrapper{padding-left:0;padding-right:0;}
 }
