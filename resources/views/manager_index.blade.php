@@ -83,23 +83,24 @@
                 <hr>
                 <thead>
                     <tr>
-                        <th><i class="fa fa-bullhorn"></i> id</th>
-                        <th><i class="fa fa-check-square"></i> 利用状況</th>
-                        <th class="hidden-phone"><i class="fa fa-laptop"></i> ホスト名</th>
-                        <th><i class="fa fa-user"></i> 氏名</th>
-                        <th><i class="fa fa-archive"></i> 保管場所</th>
-                        <th><i class="fab fa-apple"></i> OS</th>
-                        <th><i class="fab fa-windows"></i> Office</th>
-                        <th><i class="fa fa-brain"></i> CPU</th>
-                        <th><i class="fa fa-save"></i> メモリ</th>
-                        <th><i class="fa fa-edit"></i> HDD/SSD</th>
+                        <!--<th><i class="fa fa-bullhorn"></i> id</th>-->
+                        <th class="col-sm-1"><i class="fa fa-check-square"></i> 利用状況</th>
+                        <th class="hidden-phone col-sm-1"><i class="fa fa-laptop"></i> ホスト名</th>
+                        <th class="col-sm-1"><i class="fa fa-user"></i> 氏名</th>
+                        <th class="col-sm-2"><i class="fa fa-archive"></i> 保管場所</th>
+                        <th class="col-sm-2"><i class="fab fa-apple"></i> OS</th>
+                        <th class="col-sm-2"><i class="fab fa-windows"></i> Office</th>
+                        <!-- <th><i class="fa fa-brain"></i> CPU</th> -->
+                        <th class="col-sm-2"><i class="fa fa-save"></i> メモリ</th>
+                        <!-- <th><i class="fa fa-edit"></i> HDD/SSD</th> -->
+                        <th class="col-sm-2"><i class="fa fa-wrench"></i>ボタン<th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($terminal_managements as $terminal_management)
                         <tr>
-                            <td><a href="#">{{$terminal_management->id}}</a></td>
+                            <!-- <td><a href="#">{{$terminal_management->id}}</a></td> -->
                             <td><span class="@if($terminal_management->status->id ==1)label label-success label-mini @else label label-danger label-mini @endif">{{$terminal_management->status->name}}</span></td>
                             <td>{{$terminal_management->pc_name}}</td>
                             @if (isset($terminal_management->employee->name )) <td>{{$terminal_management->employee->name}}</td>@endif
