@@ -2286,8 +2286,10 @@ label {
         padding-bottom:0;
     }
 } */
+
 @media screen and (max-width:739px) {
     .sp_mgn_top_20{margin-top:20px;}
     .pad_15{padding:0 15px 0 15px;}
     .mgn_top_15{margin-top:15px;}
+    .wrapper{padding-left:60px;}
 }
