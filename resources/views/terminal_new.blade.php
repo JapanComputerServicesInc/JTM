@@ -13,10 +13,12 @@
                     <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-check-square"></i>利用状況</label>
                     <div class="radio col-sm-10">
                         <label>
-                            <input type="radio" name="status" id="optionsRadios1" value="1" checked>使用中
+                             {{ Form::radio('status', '1',true) }}
+                            使用中
                         </label>
                         <label>
-                            <input type="radio" name="status" id="optionsRadios2" value="2">未使用
+                            {{ Form::radio('status', '2') }}
+                            未使用
                         </label>
                     </div>
                 </div>
@@ -117,7 +119,7 @@
                 </div>
 
 
-                <button id="check" type="button" class="center-block btn btn-round btn-primary">確認画面へ</button>
+                <button id="check" type="button" class="center-block btn btn-round btn-primary">登録</button>
             </form>
         </div>
     </div>
@@ -131,7 +133,7 @@
     $('#check').click((event) => {
         swal({
             title: 'この情報で登録しますか?',
-            text: "You won't be able to revert this!",
+            text: "",
             icon: 'warning',
             buttons: true,
         })

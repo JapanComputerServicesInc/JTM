@@ -113,6 +113,7 @@
 
                 </tbody>
             </table>
+            {{ $terminal_management->links() }}
         </div>
     </div>
 </div>

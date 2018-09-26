@@ -83,7 +83,7 @@ class AdminTerminalNewController extends Controller
             'qr_code' => $qr_code,
         ]);
 
-        \Alert::success('登録が完了しました', 'Optional Title');
+        \Alert::success('登録が完了しました', 'QRコードを発行してください');
 
         return redirect()->route('terminal_index');
     }
