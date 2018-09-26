@@ -9,7 +9,7 @@
             <form class="form-horizontal style-form" method="get">
 
                 {{--
-                <form method="POST" action="{{ route('あっぷでーと') }}"> --}} {{--
+                <form method="POST" action="{{ route('telminal_update',['id' => $terminal_managements->id') }}"> --}} {{--
                     @csrf --}}
                     <div class="form-group">
                         <label class="col-lg-2 col-sm-2 control-label">利用状況</label>

@@ -23,7 +23,10 @@ class UserRegisterController extends Controller
         $optionsRadios=$request->input('optionsRadios');
 
         $employee_id=Employee::where('name','=',$employee)->pluck('id');
-        $department_id=Department::where('name','=',$departments)->pluck('id');
+        $departments=TerminalManagement::where('pc_name','=','$pc_name')->update(['departments'=>$last_name]);
+        $employees=TerminalManagement::find($id)->update(['last_name'=>$last_name]);
+        $departments=TerminalManagement::find($id)->update(['last_name'=>$last_name]);
+        $departments=TerminalManagement::find($id)->update(['last_name'=>$last_name]);
        return view('user_register', compact(['departments','depositories','pc_name']));
 
     }
