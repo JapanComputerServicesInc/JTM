@@ -117,11 +117,35 @@
                 </div>
 
 
-                <button type="submit" class="center-block btn btn-round btn-primary">確認画面へ</button>
+                <button id="check" type="button" class="center-block btn btn-round btn-primary">確認画面へ</button>
             </form>
         </div>
     </div>
     <!-- col-lg-12-->
 </div>
 <!-- /row -->
+@endsection
+
+@section('scripts')
+    <script>
+    $('#check').click(function() {
+        swal({
+        title: 'この情報で登録しますか?',
+        // text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Register'
+        }).then((result) => {
+        if (result.value) {
+        swal(
+          'Completed!',
+          'You have completed registration.',
+          'success'
+        )
+        }
+        })
+    })
+    </script>
 @endsection

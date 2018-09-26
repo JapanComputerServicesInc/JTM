@@ -320,6 +320,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
     <script src="{{ asset('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/sweetalert2.all.min.js') }}" type="text/javascript"></script>
 
     <script>
         /*---LEFT BAR ACCORDION----*/
