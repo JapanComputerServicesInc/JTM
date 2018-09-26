@@ -9,7 +9,7 @@
             <form class="form-horizontal style-form" method="get">
 
                 {{--
-                <form method="POST" action="{{ route('あっぷでーと') }}"> --}} {{--
+                <form method="POST" action="{{ route('telminal_update',['id' => $terminal_managements->id') }}"> --}} {{--
                     @csrf --}}
                     <div class="form-group">
                         <label class="col-lg-2 col-sm-2 control-label">利用状況</label>
@@ -44,8 +44,10 @@
                         <label class="col-lg-2 control-label"><i class="fa fa-user"></i>氏名</label>
                         <div class="col-sm-10">
                           <select class="form-control" name="employee">
-                            <option>1</option>
-                            <option>2</option>
+                          @foreach ($employees as $employee)
+                <option value="{{$employee -> id}}" @if($employee -> id ) selected @endif> {{$employee->name}}</option>
+                @endforeach
+
                           </select>
                       </div>
                     </div>
@@ -61,18 +63,21 @@
                         <label class="col-lg-2 control-label"><i class="fa fa-save"></i>保管場所</label>
                         <div class="col-sm-10">
                           <select class="form-control" name="depository" required>
-                            <option>1</option>
-                            <option>2</option>
-                          </select>
+                     @foreach ($depositories as $depository)
+                     <option value="{{$depository -> id}}" @if($depository -> id ) selected @endif> {{$depository->name}}</option>
+                    @endforeach      
+                    </select>
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-gavel"></i>メーカー名</label>
                         <div class="col-sm-10">
-                          <select class="form-control" name="producer">
-                            <option>1</option>
-                            <option>2</option>
+                        
+                          <select class="form-control" name="depository" required>
+                          @foreach ($terminal_info as $TerminalInformation)
+                     <option value="{{$TerminalInformation -> id}}" @if($TerminalInformation -> id ) selected @endif> {{$TerminalInformation->producer}}</option>
+                    @endforeach   
                           </select>
                       </div>
                     </div>
@@ -80,9 +85,10 @@
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-desktop"></i>製品名</label>
                         <div class="col-sm-10">
-                          <select class="form-control" name="product_name">
-                            <option>1</option>
-                            <option>2</option>
+                          <select class="form-control" name="product">
+                          @foreach ($terminal_info as $TerminalInformation)
+                     <option value="{{$TerminalInformation -> id}}" @if($TerminalInformation -> id ) selected @endif> {{$TerminalInformation->name}}</option>
+                    @endforeach  
                           </select>
                       </div>
                     </div>
@@ -106,8 +112,9 @@
                         <label class="col-lg-2 control-label"><i class="fa fa-save"></i>メモリ</label>
                         <div class="col-sm-10">
                           <select class="form-control" name="memory">
-                            <option>1</option>
-                            <option>2</option>
+                          @foreach ($memories as $memory)
+                     <option value="{{$memory -> id}}" @if($memory -> id ) selected @endif> {{$memory->name}}</option>
+                    @endforeach 
                           </select>
                       </div>
                     </div>
@@ -116,8 +123,9 @@
                         <label class="col-lg-2 control-label"><i class="fa fa-edit"></i>HDD</label>
                         <div class="col-sm-10">
                           <select class="form-control" name="hdd">
-                            <option>1</option>
-                            <option>2</option>
+                          @foreach ($hdds as $hdd)
+                     <option value="{{$hdd -> id}}" @if($hdd -> id ) selected @endif> {{$hdd->name}}</option>
+                    @endforeach 
                           </select>
                       </div>
                     </div>
@@ -126,8 +134,9 @@
                         <label class="col-lg-2 control-label"><i class="fab fa-apple"></i>OS</label>
                         <div class="col-sm-10">
                           <select class="form-control" name="os">
-                            <option>1</option>
-                            <option>2</option>
+                          @foreach ($os as $os)
+                     <option value="{{$os -> id}}" @if($os -> id ) selected @endif> {{$os->name}}</option>
+                    @endforeach
                           </select>
                       </div>
                     </div>
@@ -135,9 +144,10 @@
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fab fa-windows"></i>Office</label>
                         <div class="col-sm-10">
-                          <select class="form-control" name="office">
-                            <option>1</option>
-                            <option>2</option>
+                          <select class="form-control" name="OfficeInformation">
+                          @foreach ($office_info as $OfficeInformation)
+                     <option value="{{$OfficeInformation -> id}}" @if($OfficeInformation -> id ) selected @endif> {{$OfficeInformation->name}}</option>
+                    @endforeach
                           </select>
                       </div>
                     </div>
@@ -157,17 +167,18 @@
                     </div>
 
                     <div class="row text-center">
-                      <button type="submit" class="btn btn-round btn-success">確認画面へ</button>
+                      <button type="submit" class="btn btn-round btn-success" onClick="alert('エラーです！');">確認画面へ</button>
                       <button type="button" class="btn btn-round btn-danger">削除</button>
                     </div>
                 </form>
         </div>
     </div>
-    <!-- col-lg-12-->
+   
 </div>
-<!-- /row -->
+
 
 
 
 
 @endsection
+
