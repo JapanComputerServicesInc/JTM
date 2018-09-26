@@ -35,14 +35,6 @@ Route::prefix('admin')->group(function () {
   Route::get('/terminal/new','AdminTerminalNewController@new')->name('terminal_new');
   Route::post('/terminal/create','AdminTerminalNewController@create')->name('terminal_create');
 
-  // 端末新規登録確認
-  Route::post('/terminal/check','AdminTerminalNewController@check')->name('terminal_check');
-
-
-  // 端末新規登録完了
-  Route::get('/terminal/complete/{id}','AdminTerminalNewController@complete')->name('terminal_complete');
-
-
   // 端末編集
   Route::get('/terminal/{id}/edit','AdminTerminalEditController@Edit')->name('terminal_edit');
 

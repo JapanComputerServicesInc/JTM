@@ -320,8 +320,18 @@
     <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
     <script src="{{ asset('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-select.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/sweetalert2.all.min.js') }}" type="text/javascript"></script>
-
+    <script src="{{ asset('js/sweetalert.min.js') }}" type="text/javascript"></script>
+    @if (Session::has('sweet_alert.alert'))
+        <script>
+            swal({
+                text: "{!! Session::get('sweet_alert.text') !!}",
+                title: "{!! Session::get('sweet_alert.title') !!}",
+                timer: {!! Session::get('sweet_alert.timer') !!},
+                icon: "{!! Session::get('sweet_alert.icon') !!}",
+                // more options
+            });
+        </script>
+    @endif
     <script>
         /*---LEFT BAR ACCORDION----*/
 

@@ -45,7 +45,7 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="employee">
                           @foreach ($employees as $employee)
-                <option value="{{$employee -> id}}" @if($employee -> id ) selected @endif> {{$employee->name}}</option>
+                <option value="{{$employee->id}}" @if($employee->id ) selected @endif> {{$employee->name}}</option>
                 @endforeach
 
                           </select>
@@ -64,8 +64,8 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="depository" required>
                      @foreach ($depositories as $depository)
-                     <option value="{{$depository -> id}}" @if($depository -> id ) selected @endif> {{$depository->name}}</option>
-                    @endforeach      
+                     <option value="{{$depository->id}}" @if($depository->id ) selected @endif> {{$depository->name}}</option>
+                    @endforeach
                     </select>
                       </div>
                     </div>
@@ -73,11 +73,11 @@
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-gavel"></i>メーカー名</label>
                         <div class="col-sm-10">
-                        
+
                           <select class="form-control" name="depository" required>
                           @foreach ($terminal_info as $TerminalInformation)
-                     <option value="{{$TerminalInformation -> id}}" @if($TerminalInformation -> id ) selected @endif> {{$TerminalInformation->producer}}</option>
-                    @endforeach   
+                     <option value="{{$TerminalInformation->id}}" @if($TerminalInformation->id ) selected @endif> {{$TerminalInformation->producer}}</option>
+                    @endforeach
                           </select>
                       </div>
                     </div>
@@ -87,8 +87,8 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="product">
                           @foreach ($terminal_info as $TerminalInformation)
-                     <option value="{{$TerminalInformation -> id}}" @if($TerminalInformation -> id ) selected @endif> {{$TerminalInformation->name}}</option>
-                    @endforeach  
+                     <option value="{{$TerminalInformation->id}}" @if($TerminalInformation->id ) selected @endif> {{$TerminalInformation->name}}</option>
+                    @endforeach
                           </select>
                       </div>
                     </div>
@@ -113,8 +113,8 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="memory">
                           @foreach ($memories as $memory)
-                     <option value="{{$memory -> id}}" @if($memory -> id ) selected @endif> {{$memory->name}}</option>
-                    @endforeach 
+                     <option value="{{$memory->id}}" @if($memory->id ) selected @endif> {{$memory->name}}</option>
+                    @endforeach
                           </select>
                       </div>
                     </div>
@@ -124,8 +124,8 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="hdd">
                           @foreach ($hdds as $hdd)
-                     <option value="{{$hdd -> id}}" @if($hdd -> id ) selected @endif> {{$hdd->name}}</option>
-                    @endforeach 
+                     <option value="{{$hdd->id}}" @if($hdd->id ) selected @endif> {{$hdd->name}}</option>
+                    @endforeach
                           </select>
                       </div>
                     </div>
@@ -135,7 +135,7 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="os">
                           @foreach ($os as $os)
-                     <option value="{{$os -> id}}" @if($os -> id ) selected @endif> {{$os->name}}</option>
+                     <option value="{{$os->id}}" @if($os->id ) selected @endif> {{$os->name}}</option>
                     @endforeach
                           </select>
                       </div>
@@ -146,7 +146,7 @@
                         <div class="col-sm-10">
                           <select class="form-control" name="OfficeInformation">
                           @foreach ($office_info as $OfficeInformation)
-                     <option value="{{$OfficeInformation -> id}}" @if($OfficeInformation -> id ) selected @endif> {{$OfficeInformation->name}}</option>
+                     <option value="{{$OfficeInformation->id}}" @if($OfficeInformation->id ) selected @endif> {{$OfficeInformation->name}}</option>
                     @endforeach
                           </select>
                       </div>
@@ -173,7 +173,7 @@
                 </form>
         </div>
     </div>
-   
+
 </div>
 
 
@@ -181,4 +181,3 @@
 
 
 @endsection
-

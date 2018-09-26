@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <div class="form-panel">
             <h1 class="mb">端末新規登録</h1>
-            <form class="form-horizontal style-form" method="POST" action="{{ route('terminal_check') }}">
+            <form id="form1" class="form-horizontal style-form" method="POST" action="{{ route('terminal_create') }}">
                 @csrf
 
                 <div class="form-group">
@@ -128,24 +128,18 @@
 
 @section('scripts')
     <script>
-    $('#check').click(function() {
+    $('#check').click((event) => {
         swal({
-        title: 'この情報で登録しますか?',
-        // text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Register'
-        }).then((result) => {
-        if (result.value) {
-        swal(
-          'Completed!',
-          'You have completed registration.',
-          'success'
-        )
-        }
+            title: 'この情報で登録しますか?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            buttons: true,
         })
+        .then((willDelete) => {
+          if (willDelete) {
+              $('#form1').submit();
+          }
+        });
     })
     </script>
 @endsection
