@@ -336,7 +336,7 @@
         /*---LEFT BAR ACCORDION----*/
 
 $(function() {
-    $('select').selectpicker();
+    $('.selectpicker').selectpicker();
     $('#nav-accordion').dcAccordion({
         eventType: 'click',
         autoClose: true,
