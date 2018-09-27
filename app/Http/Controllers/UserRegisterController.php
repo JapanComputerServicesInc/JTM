@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Department;
 use App\Depository;
 use App\Employee;
+use App\TerminalManagement;
 
 class UserRegisterController extends Controller
 {
@@ -17,17 +18,14 @@ class UserRegisterController extends Controller
     }
 
     public function update(Request $request, $pc_name){
-        $employee=$request->input('employee');
-        $department=$request->input('department');
-        $depository=$request->input('depository');
-        $optionsRadios=$request->input('optionsRadios');
+        $employee_id=$request->input('employee_id');        
+        $depositories_id=$request->input('depositories_id');
+        $status_id=$request->input('optionsRadios');
 
-        $employee_id=Employee::where('name','=',$employee)->pluck('id');
-        $departments=TerminalManagement::where('pc_name','=','$pc_name')->update(['departments'=>$last_name]);
-        $employees=TerminalManagement::find($id)->update(['last_name'=>$last_name]);
-        $departments=TerminalManagement::find($id)->update(['last_name'=>$last_name]);
-        $departments=TerminalManagement::find($id)->update(['last_name'=>$last_name]);
-       return view('user_register', compact(['departments','depositories','pc_name']));
+        TerminalManagement::update(['employee_id'=>$employee_id]);
+        TerminalManagement::update(['depositories_id'=>$depositories_id]);
+        TerminalManagement::update(['status_id'=>$status_id]);
+       return view('user_register');
 
     }
 }

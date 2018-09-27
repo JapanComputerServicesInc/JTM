@@ -16,13 +16,10 @@
               <div class="col-lg-5">
                 {{Form::text('employee',null,['class' => 'form-control' ,'data-live-search'=>'true'])}}
               </div>
-              <label class="col-md-1 control-label sp_mgn_top_20">部署</label>
-                <div class="col-lg-5">
-                  {{ Form::select('department', $departments, '', ['placeholder' => '選択してください', 'class' => 'form-control']) }}
-                </div>
+              
           </div>
           <div class="form-group">
-            <label class="col-sm-2 col-md-4 col-lg-1 control-label">保管場所</label>
+            <label class="col-sm-2 col-md-4 col-lg-1 control-label selectpicker">保管場所</label>
               <div class="col-lg-5">
                 {{ Form::select('depository', $depositories, '', ['placeholder' => '選択してください', 'class' => 'form-control']) }}
               </div>

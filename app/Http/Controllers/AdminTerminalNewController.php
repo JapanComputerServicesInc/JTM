@@ -14,6 +14,7 @@ use App\Os;
 use App\Status;
 use App\OfficeInformation;
 use App\TerminalManagement;
+use App\Alert;
 
 class AdminTerminalNewController extends Controller
 {

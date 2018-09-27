@@ -46,7 +46,6 @@
                         {{ Form::select('hdd', $hdds, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker']) }}
                     </div>
                 </div>
-
                 <div class="form-group">
                   <label class="checkbox-inline">
                       {{ Form::radio('optionsRadios', '1') }}
