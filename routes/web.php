@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
 
 // 利用者
@@ -37,11 +37,6 @@ Route::prefix('admin')->group(function () {
 
   // 端末編集
   Route::get('/terminal/{id}/edit','AdminTerminalEditController@Edit')->name('terminal_edit');
-
-  // 端末編集
-  Route::get('/terminal/edit/check',function(){
-    return view('terminal_edit_check');
-  });
 
 
 });
