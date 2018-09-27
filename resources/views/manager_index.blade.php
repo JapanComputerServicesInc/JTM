@@ -99,7 +99,7 @@
                 <tbody>
                     @foreach ($terminal_managements as $terminal_management)
                         <tr>
-                            <td ><a href="{{'#'}}">{{$terminal_management->id}}</td>
+                            <td >{{link_to_route('terminal_edit', $terminal_management->id, $terminal_management->id)}}</td>
                             <td><span class="@if($terminal_management->status->id ==1)label label-success label-mini @else label label-danger label-mini @endif">{{$terminal_management->status->name}}</span></td>
                             <td>{{$terminal_management->pc_name}}</td>
                             @if (isset($terminal_management->employee->name )) <td>{{$terminal_management->employee->name}} </td> @else <td></td> @endif
