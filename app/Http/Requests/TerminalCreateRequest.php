@@ -24,7 +24,14 @@ class TerminalCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+        'pc_name'=> 'required',
+        'model_name'=>'required',
+        'serial_no'=>'required',
+        'status'=>'required',
+        'depository'=>'required',
+        'product_name'=>'required',
+
+
         ];
     }
 

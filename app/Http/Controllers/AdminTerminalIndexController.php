@@ -24,7 +24,7 @@ class AdminTerminalIndexController extends Controller
         $office_informations = OfficeInformation::pluck('name', 'id');
         $memories = Memory::pluck('name', 'id');
         $hdds = Hdd::pluck('name', 'id');
-        $terminal_managements = TerminalManagement::all();
+        $terminal_managements = TerminalManagement::paginate(10);
 
         return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','statuses','terminal_managements']));
     }
@@ -70,7 +70,7 @@ class AdminTerminalIndexController extends Controller
                 $query->where('status_id', '=', $requestParam['optionsRadios']);
             }
         })
-        ->get();
+        ->paginate(10);
         return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','terminal_managements']));
     }
 }
