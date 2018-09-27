@@ -43,17 +43,7 @@
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-user"></i>氏名</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
-                        {{ Form::select('employee', $employees,  $terminal_managements->employees_id, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
-                    
-=======
-                          <select class="form-control" name="employee">
-                          @foreach ($employees as $employee)
-                <option value="{{$employee->id}}" @if($employee->id ) selected @endif> {{$employee->name}}</option>
-                @endforeach
-
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
+                            {{ Form::select('employee', $employees,  $terminal_managements->employees_id, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
                       </div>
                     </div>
 
@@ -67,46 +57,21 @@
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-save"></i>保管場所</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
                         {{ Form::select('depository', $depositories, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
-=======
-                          <select class="form-control" name="depository" required>
-                     @foreach ($depositories as $depository)
-                     <option value="{{$depository->id}}" @if($depository->id ) selected @endif> {{$depository->name}}</option>
-                    @endforeach
-                    </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-gavel"></i>メーカー名</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
                         {{ Form::select('TerminalInformation', $terminal_info, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
-=======
-
-                          <select class="form-control" name="depository" required>
-                          @foreach ($terminal_info as $TerminalInformation)
-                     <option value="{{$TerminalInformation->id}}" @if($TerminalInformation->id ) selected @endif> {{$TerminalInformation->producer}}</option>
-                    @endforeach
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-desktop"></i>製品名</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
                         {{ Form::select('TerminalInformatiom', $terminal_info, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
-=======
-                          <select class="form-control" name="product">
-                          @foreach ($terminal_info as $TerminalInformation)
-                     <option value="{{$TerminalInformation->id}}" @if($TerminalInformation->id ) selected @endif> {{$TerminalInformation->name}}</option>
-                    @endforeach
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
@@ -129,64 +94,28 @@
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-save"></i>メモリ</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
                           {{ Form::select('memory', $memories, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}  
-=======
-                          <select class="form-control" name="memory">
-                          @foreach ($memories as $memory)
-                     <option value="{{$memory->id}}" @if($memory->id ) selected @endif> {{$memory->name}}</option>
-                    @endforeach
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-edit"></i>HDD</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
                           {{ Form::select('hdd', $hdds, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}      
-=======
-                          <select class="form-control" name="hdd">
-                          @foreach ($hdds as $hdd)
-                     <option value="{{$hdd->id}}" @if($hdd->id ) selected @endif> {{$hdd->name}}</option>
-                    @endforeach
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fab fa-apple"></i>OS</label>
-                        <div class="col-sm-10">
-<<<<<<< HEAD
-                         
+                        <div class="col-sm-10">                         
                           {{ Form::select('os', $oss, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}      
-                       
-=======
-                          <select class="form-control" name="os">
-                          @foreach ($os as $os)
-                     <option value="{{$os->id}}" @if($os->id ) selected @endif> {{$os->name}}</option>
-                    @endforeach
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fab fa-windows"></i>Office</label>
-                        <div class="col-sm-10">
-<<<<<<< HEAD
-                          
+                        <div class="col-sm-10">                          
                           {{ Form::select('office_information', $office_informations, null, ['placeholder' => '選択してください', 'class' => 'form-control']) }}            
-                         
-=======
-                          <select class="form-control" name="OfficeInformation">
-                          @foreach ($office_info as $OfficeInformation)
-                     <option value="{{$OfficeInformation->id}}" @if($OfficeInformation->id ) selected @endif> {{$OfficeInformation->name}}</option>
-                    @endforeach
-                          </select>
->>>>>>> f5484ef68a2bac5063cd16cba940e281401d334c
                       </div>
                     </div>
 
