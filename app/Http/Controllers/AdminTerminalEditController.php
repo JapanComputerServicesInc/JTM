@@ -21,42 +21,70 @@ class AdminTerminalEditController extends Controller
     public function edit($id){
       //処理内容↓
       $terminal_managements = TerminalManagement::find($id);
-      $employees = Employee::pluck('name', 'id');
+      $employees = Employee::all();
+      foreach ($employees as $employee) {
+         $employee->name = $employee->name.'('.$employee->department->name.')';
+      }
+      $employees = $employees->pluck('name','id');
       $departments = Department::pluck('name', 'id');
       $depositories = Depository::pluck('name', 'id');
       $cpus = cpu::pluck('name', 'id');
-      $department = Department::pluck('name', 'id');
-      $depositories = Depository::pluck('name', 'id');
-      $employees = Employee::pluck('name', 'id');
       $hdds = Hdd::pluck('name', 'id');
       $memories = Memory::pluck('name', 'id');
       $office_informations = OfficeInformation::pluck('name', 'id');
       $office_licenses = OfficeLicense::pluck('name', 'id');
       $oss = Os::pluck('name', 'id');
       $status = Status::pluck('name', 'id');
-      $terminal_info = TerminalInformation::pluck('name', 'id');
-      return view('terminal_edit',compact(['cpus','departments','depositories','employees','hdds','memories','office_informations','office_licenses','oss','status','terminal_info','terminal_managements']));
-    
-    /*
-    $terminal_managements = TerminalManagement::all();
-    $cpus = Cpu::pluck('name', 'id');
-    $oss = Os::pluck('name', 'id');
-    $depositories = Depository::pluck('name', 'id');
-    $office_informations = OfficeInformation::pluck('name', 'id');
-    $memories = Memory::pluck('name', 'id');
-    $hdds = Hdd::pluck('name', 'id');
-   
+      $terminal_informations = TerminalInformation::all();
+      foreach ($terminal_informations as $terminal_information) {
+          $terminal_information->name = $terminal_information->name.'('.$terminal_information->producer.')';
+      }
+      $terminal_informations = $terminal_informations->pluck('name','id');
+      return view('terminal_edit',compact(['cpus','departments','depositories','employees','hdds','memories','office_informations','office_licenses','oss','status','terminal_informations','terminal_managements']));
 
-    return view('manager_index',compact(['cpus','oss','depositories','office_informations','memories','hdds','statuses','terminal_managements']));
+
     }
-    
-*/
-return view('terminal_edit',compact(['cpus','oss','depositories','office_informations','memories','hdds','statuses','terminal_managements']));
+    public function update(Request $request,$id){
+
+     $terminal_managements = TerminalManagement::find($id);
+     $status = $request->input('status');
+     $pc_name = $request->input('pc_name');
+     $approval_no = $request->input('approval_no');
+     $employee = $request->input('employee');
+     $depository = $request->input('depository');
+     $product_name = $request->input('product_name');
+     $serial_no = $request->input('serial_no');
+     $model_name = $request->input('model_name');
+     $cpu = $request->input('cpu');
+     $memory = $request->input('memory');
+     $hdd = $request->input('hdd');
+     $os = $request->input('os');
+     $office_information = $request->input('office_information');
+     $memo = $request->input('memo');
+     $qr_code = $request->input('qr_code');
+
+     $terminal_managements->status_id = $status;
+     $terminal_managements->pc_name = $pc_name;
+     $terminal_managements->approval_no = $approval_no;
+     $terminal_managements->employees_id = $employee;
+     $terminal_managements->depositories_id = $depository;
+     $terminal_managements->terminal_informations_id = $product_name;
+     $terminal_managements->serial_no = $serial_no;
+     $terminal_managements->model_name = $model_name;
+     $terminal_managements->cpu_id = $cpu;
+     $terminal_managements->memories_id = $memory;
+     $terminal_managements->hdd_id = $hdd;
+     $terminal_managements->os_id = $os;
+     $terminal_managements->office_informations_id = $office_information;
+     $terminal_managements->memo = $memo;
+     $terminal_managements->qr_code = $qr_code;
+     $terminal_managements->update();
+
+     $request->session()->flash('update_message', '更新が完了しました。');
+
+     return redirect()->route('terminal_edit', ['id' => $id]);
     }
-    public function update()
-    {
-//
-    }
+
 
     public function delete()
     {
