@@ -2,7 +2,7 @@
 
 @section('content')
     @if (Session::has('update_message'))
-                <div class="alert alert-success" role="alert">{{ Session::get('update_message') }}</div>
+        <div class="alert alert-success" role="alert">{{ Session::get('update_message') }}</div>
     @endif
 <div class="row mt">
     <div class="col-lg-12">
@@ -10,6 +10,7 @@
             <h4 class="mb">端末編集・削除</h4>
                 <form class="form-horizontal style-form" method="POST" action="{{ route('terminal_update',['id' => $terminal_managements->id]) }}">
                     @csrf
+                    @method('patch')
                     <div class="form-group">
                         <label class="col-lg-2 col-sm-2 control-label">利用状況</label>
                      <div class="radio">
@@ -149,17 +150,35 @@
                     </div>
 
                     <div class="row text-center">
-                      <button type="submit" class="btn btn-round btn-success">確認画面へ</button>
-                      <button type="button" class="btn btn-round btn-danger">削除</button>
-                    </div>
-                </form>
+                      <button type="submit" class="btn btn-round btn-success">編集</button>
+                      <button id="delete" type="button" class="btn btn-round btn-danger">削除</button>
+                  </div>
+              </form>
+              <form id="form1" class="form-horizontal style-form" method="POST" action="{{ route('terminal_destroy',['id' => $terminal_managements->id]) }}">
+                  @csrf
+                  @method('delete')
+              </form>
         </div>
     </div>
 
 </div>
 
+@endsection
 
-
-
-
+@section('scripts2')
+    <script>
+    $('#delete').click((event) => {
+        swal({
+            title: 'この情報を削除しますか?',
+            text: "消すともとに戻すことができません",
+            icon: 'warning',
+            buttons: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+              $('#form1').submit();
+          }
+        });
+    })
+    </script>
 @endsection

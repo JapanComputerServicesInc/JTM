@@ -37,7 +37,8 @@ Route::prefix('admin')->group(function () {
 
   // 端末編集
   Route::get('/terminal/{id}/edit','AdminTerminalEditController@Edit')->name('terminal_edit');
-  Route::post('/terminal/{id}/update','AdminTerminalEditController@Update')->name('terminal_update');
+  Route::patch('/terminal/{id}','AdminTerminalEditController@update')->name('terminal_update');
+  Route::delete('/terminal/{id}','AdminTerminalEditController@destroy')->name('terminal_destroy');
 
 
 });

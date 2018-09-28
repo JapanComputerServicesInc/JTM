@@ -24,7 +24,7 @@ class TerminalCreateRequest extends FormRequest
     public function rules()
     {
         return [
-        'pc_name'=> 'required',
+        'pc_name'=> 'required|unique:terminal_managements,pc_name',
         'model_name'=>'required',
         'serial_no'=>'required',
         'status'=>'required',
