@@ -226,7 +226,7 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
 
-                        <p class="centered"><a href="profile.html"><img src="{{asset('images/sub-dog.jpg')}}" class="img-circle" width="100"></a></p>
+                        <p class="centered"><a href="{{route('login')}}"><img src="{{asset('images/sub-dog.jpg')}}" class="img-circle" width="100"></a></p>
                         <h5 class="centered">Welcome To TaharaRoom!!</h5>
 
                         <span class="btn_a">
@@ -239,7 +239,7 @@
 
                         <li class="sub-menu">
                             <a href="{{route('terminal_index')}}">
-                              <i class="fa fa-desktop"></i>
+                              <!--<i class="fa fa-desktop"></i>-->
                               <span>一覧</span>
                             </a>
                         </li>
