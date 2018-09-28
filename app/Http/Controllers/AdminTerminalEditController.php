@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TerminalCreateRequest;
 use App\Cpu;
 use App\Department;
 use App\Depository;
@@ -44,7 +45,7 @@ class AdminTerminalEditController extends Controller
 
 
     }
-    public function update(Request $request,$id){
+    public function update(TerminalCreateRequest $request,$id){
 
      $terminal_managements = TerminalManagement::find($id);
      $status = $request->input('status');
@@ -86,8 +87,11 @@ class AdminTerminalEditController extends Controller
     }
 
 
-    public function delete()
+    public function destroy(Request $request,$id)
     {
-//
+    $terminal_managements = TerminalManagement::find($id);
+    $terminal_managements->delete();
+    $request->session()->flash('destroy_message', '削除が完了しました。');
+    return redirect()->route('terminal_index');
     }
 }

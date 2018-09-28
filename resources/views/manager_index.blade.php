@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if(Session::has('destroy_message'))
+    <div class="alert alert-danger" role="alert">{{ Session::get('destroy_message') }}</div>
+@endif
 
 <div class="row mt">
     <div class="col-lg-12">

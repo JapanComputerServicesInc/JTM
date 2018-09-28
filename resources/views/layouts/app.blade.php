@@ -415,6 +415,8 @@ var Script = function () {
 </script>
 
 @yield('scripts')
+@yield('scripts2')
+
 </body>
 
 </html>
