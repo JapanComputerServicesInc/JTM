@@ -145,7 +145,9 @@
 
                         <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-envelope"></i>QRコードURL</label>
                         <div class="col-md-4">
-                            {{Form::text('qr_code',$terminal_managements->qr_code,['class' => 'form-control', 'placeholder' => '入力してください'])}}
+                            {{Form::text('qr_code',$terminal_managements->qr_code,['id'=>'CopyTarget','class' => 'form-control', 'placeholder' => '入力してください','readonly'])}}
+                            <button type="button" class="btn btn-info" onclick="CopyToClipboard()" data-toggle="tooltip" data-placement="top" title="コピーする">
+                                <i class="fas fa-clipboard"></i></button>
                         </div>
                     </div>
 
@@ -167,12 +169,26 @@
 
 @section('scripts2')
     <script>
+        function CopyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("CopyTarget");
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+            // コピーをお知らせする
+            swal("コピーできました!",copyTarget.value);
+        }
+    </script>
+
+    <script>
     $('#delete').click((event) => {
         swal({
             title: 'この情報を削除しますか?',
             text: "消すともとに戻すことができません",
             icon: 'warning',
             buttons: true,
+            dangerMode: true,
         })
         .then((willDelete) => {
           if (willDelete) {

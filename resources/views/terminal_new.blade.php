@@ -147,7 +147,7 @@
                 </div>
 
 
-                <button id="check" type="button" class="center-block btn btn-round btn-primary">登録</button>
+                <button id="check" type="button" class="center-block btn btn-round btn-success">登録</button>
             </form>
         </div>
     </div>
@@ -170,6 +170,7 @@
               $('#form1').submit();
           }
         });
-    })
+
+    });
     </script>
 @endsection

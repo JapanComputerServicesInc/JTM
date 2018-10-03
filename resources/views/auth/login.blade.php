@@ -3,33 +3,39 @@
 @section('content')
 <div class="container">
 
-    <form class="form-login" action="/admin/terminal/list">
+    <form method="post" class="form-login" action="{{ route('login') }}">
+        @csrf
         <h2 class="form-login-heading">sign in now</h2>
         <div class="login-wrap">
-            <input type="text" class="form-control" placeholder="User ID" autofocus>
+            <input name="email" type="email" class="form-control" placeholder="User ID" autofocus>
+            @if ($errors->has('email'))
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+            @endif
             <br>
-            <input type="password" class="form-control" placeholder="Password">
+            <input name="password" type="password" class="form-control" placeholder="Password">
+            @if ($errors->has('password'))
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+            @endif
             <label class="checkbox">
-  		                <span class="pull-right">
-  		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-
-  		                </span>
-  		            </label>
+                <span class="pull-right">
+                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+                </span>
+            </label>
             <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
             <hr>
-
-            <div class="login-social-link centered">
+            {{-- <div class="login-social-link centered">
                 <p>or you can sign in via your social network</p>
                 <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
                 <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
-            </div>
+            </div> --}}
             <div class="registration">
                 Don't have an account yet?<br/>
-                <a class="" href="#">
-  		                    Create an account
-  		                </a>
+                <a class="nav-link" href="{{ route('register') }}">Create an account</a>
             </div>
-
         </div>
 
         <!-- Modal -->
@@ -42,8 +48,7 @@
                     </div>
                     <div class="modal-body">
                         <p>Enter your e-mail address below to reset your password.</p>
-                        <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
-
+                        {{-- <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix"> --}}
                     </div>
                     <div class="modal-footer">
                         <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>

@@ -52,7 +52,11 @@ class AdminTerminalNewController extends Controller
          $status_id = $request->input('status');
          $pc_name = $request->input('pc_name');
          $approval_no = $request->input('approval_no');
-         $employee = $request->input('employee_name');
+         if($status_id ==1){
+             $employee = $request->input('employee_name');
+         }else{
+             $employee = null;
+         }
          $depositories_id = $request->input('depository');
          $terminal_info_id = $request->input('product_name');
          $serial_no = $request->input('serial_no');
@@ -63,14 +67,14 @@ class AdminTerminalNewController extends Controller
          $os_id = $request->input('os');
          $office_info_id = $request->input('office_info');
          $memo = $request->input('memo');
-         $qr_code = $request->input('qr_code');
+         $qr_code = route('user_register_edit',['pc_name' =>$pc_name]);
 
         $terminal_management = TerminalManagement::create([
 
             'status_id' => $status_id,
             'pc_name' => $pc_name,
             'approval_no' => $approval_no,
-            'employees_id' => $employee,
+            'employees_id' =>$employee,
             'depositories_id' => $depositories_id,
             'terminal_informations_id' => $terminal_info_id,
             'serial_no' => $serial_no,
@@ -84,7 +88,7 @@ class AdminTerminalNewController extends Controller
             'qr_code' => $qr_code,
         ]);
 
-        \Alert::success('登録が完了しました', 'QRコードを発行してください');
+        \Alert::basic($qr_code,'登録が完了したのでQRコードを発行してください。');
 
         return redirect()->route('terminal_index');
     }

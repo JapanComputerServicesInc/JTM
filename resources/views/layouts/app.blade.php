@@ -48,7 +48,7 @@
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
                 </div>
                 <!--logo start-->
-                <a href="index.html" class="logo"><b>JCS Tahara Management</b></a>
+                <a href="index.html" class="logo"><b>JCS Terminal Management</b></a>
                 <!--logo end-->
                 <div class="nav notify-row" id="top_menu">
                     <!--  notification start -->
@@ -190,30 +190,18 @@
                     </ul>
                     <!--  notification end -->
                 </div>
-<!--
                 <div class="top-menu">
-                    <<ul class="nav pull-right top-menu">
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                     </a>
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
-                                             {{ __('Logout') }}
-                                         </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
+                	<ul class="nav pull-right top-menu">
+                        <li>
+                            <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                     @csrf
+                                 </form>
                         </li>
-
-                    </ul>
-
+                	</ul>
                 </div>
-    -->
+
             </header>
             <!--header end-->
 
@@ -227,11 +215,11 @@
                     <ul class="sidebar-menu" id="nav-accordion">
 
                         <p class="centered"><a href="profile.html"><img src="{{asset('images/sub-dog.jpg')}}" class="img-circle" width="100"></a></p>
-                        <h5 class="centered">Welcome To TaharaRoom!!</h5>
+                        <h5 class="centered">Welcome To JTM!!</h5>
 
                         <span class="btn_a">
-                        <li class="mt">
-                            <a class="active" href="{{route('terminal_new')}}">
+                        <li class="sub-menu">
+                            <a href="{{route('terminal_new')}}">
                               <i class="fas fa-tachometer-alt"></i>
                               <span>新規</span>
                           </a>
@@ -411,11 +399,30 @@ var Script = function () {
     $("#sidebar").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '3', cursorborderradius: '10px', background: '#404040', spacebarenabled:false, cursorborder: ''});
 
     $("html").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled:false,  cursorborder: '', zindex: '1000'});
+
+
 }();
+
 </script>
+
+<script>
+var url = window.location;
+     $('.sidebar-menu a[href="'+url+'"]').addClass('active');
+</script>
+
+
 
 @yield('scripts')
 @yield('scripts2')
+@yield('scripts3')
+
+<script>
+    $(function(){
+        $('#no_user').bind('click', function(){
+            $(this.form).find("textarea, :text select").val("");
+       });
+    });
+</script>
 
 </body>
 

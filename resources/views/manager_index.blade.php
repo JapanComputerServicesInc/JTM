@@ -94,6 +94,7 @@
                         <!-- <th><i class="fa fa-brain"></i> CPU</th> -->
                         <th class="col-sm-1"><i class="fa fa-save"></i> メモリ</th>
                         <th class="col-sm-2"><i class="fa fa-edit"></i> HDD/SSD</th>
+                        {{-- <th class="col-sm-2"><i class="fa fa-edit"></i> QRコード</th> --}}
                         <th></th>
                     </tr>
                 </thead>
@@ -109,6 +110,7 @@
                             @if (isset($terminal_management->office_info->name )) <td>{{$terminal_management->office_info->name}}</td> @else <td></td> @endif
                             @if (isset($terminal_management->memory->name )) <td>{{$terminal_management->memory->name}}</td> @else <td></td> @endif
                             @if (isset($terminal_management->hdd->name )) <td>{{$terminal_management->hdd->name}}</td> @else <td></td> @endif
+                            {{-- @if (isset($terminal_management->qr_code )) <td>{{$terminal_management->qr_code }}</td> @else <td></td> @endif --}}
                         </tr>
                     @endforeach
 
@@ -130,7 +132,6 @@
         $(function(){
             // 入力値をリセット
             $('#clearForm').bind('click', function(){
-                console.log('クリア', this.form);
                 $(this.form).find("textarea, :text select").val("");
                 $(this.form).find(".selectpicker").selectpicker('val', '');
                 // $(this.form).find(":checkbox:checked").prop("checked", false);

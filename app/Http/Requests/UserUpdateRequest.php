@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TerminalCreateRequest extends FormRequest
+class UserUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,8 @@ class TerminalCreateRequest extends FormRequest
     public function rules()
     {
         return [
-        'pc_name'=> 'required',
-        'model_name'=>'required',
-        'serial_no'=>'required',
         'status'=>'required',
-        'depository'=>'required',
-        'product_name'=>'required',
+        'depository'=>'required'
 
 
         ];
