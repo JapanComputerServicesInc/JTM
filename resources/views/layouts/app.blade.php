@@ -227,7 +227,7 @@
 
                         <li class="sub-menu">
                             <a href="{{route('terminal_index')}}">
-                              <i class="fa fa-desktop"></i>
+                              <!--<i class="fa fa-desktop"></i>-->
                               <span>一覧</span>
                             </a>
                         </li>
