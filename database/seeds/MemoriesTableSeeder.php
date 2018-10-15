@@ -12,10 +12,10 @@ class MemoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('memories')->insert([
-             ['name' => '4GB'],
-             ['name' => '2GB'],
-             ['name' => '8GB'],
-             ['name' => '16GB']
+             ['name' => '4GB未満'],
+             ['name' => '4GB以上'],
+             ['name' => '8GB以上'],
+             ['name' => '16GB以上']
          ]);
     }
 }

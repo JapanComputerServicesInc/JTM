@@ -15,12 +15,14 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100" rel="stylesheet">
 
     <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    {{--
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <!--external css-->
-    {{-- <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" /> --}}
+    {{--
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" /> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/zabuto_calendar.css') }}"> {{--
     <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" /> --}}
@@ -33,6 +35,7 @@
 
 
     <script src="{{ asset('js/chart-master/Chart.js') }}"></script>
+
 
 </head>
 
@@ -48,7 +51,7 @@
                     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
                 </div>
                 <!--logo start-->
-                <a href="index.html" class="logo"><b>JCS Terminal Management</b></a>
+                <a href="{{route('terminal_index')}}" class="logo"><b>JCS Terminal Management</b></a>
                 <!--logo end-->
                 <div class="nav notify-row" id="top_menu">
                     <!--  notification start -->
@@ -191,15 +194,15 @@
                     <!--  notification end -->
                 </div>
                 <div class="top-menu">
-                	<ul class="nav pull-right top-menu">
+                    <ul class="nav pull-right top-menu">
                         <li>
                             <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
-                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                     @csrf
-                                 </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
-                	</ul>
+                    </ul>
                 </div>
 
             </header>
@@ -210,14 +213,12 @@
           *********************************************************************************************************************************************************** -->
             <!--sidebar start-->
             <aside>
-                <div id="sidebar" class="nav-collapse ">
+                <div id="sidebar" class="nav-collapse">
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu" id="nav-accordion">
 
-                        <p class="centered"><a href="profile.html"><img src="{{asset('images/sub-dog.jpg')}}" class="img-circle" width="100"></a></p>
+                        <p class="centered"><img src="{{asset('images/sub-dog.jpg')}}" class="img-circle" width="100"></a></p>
                         <h5 class="centered">Welcome To JTM!!</h5>
-
-                        <span class="btn_a">
                         <li class="sub-menu">
                             <a href="{{route('terminal_new')}}">
                               <i class="fas fa-tachometer-alt"></i>
@@ -227,28 +228,29 @@
 
                         <li class="sub-menu">
                             <a href="{{route('terminal_index')}}">
-                              <!--<i class="fa fa-desktop"></i>-->
+                              <i class="fa fa-desktop"></i>
                               <span>一覧</span>
                             </a>
                         </li>
-                        <li class="sub-menu">
-                            <a href="">
-                              <i class="fa fa-desktop"></i>
-                              <span>端末管理</span>
-                            </a>
+                        <li class="sub-menu dcjq-parent-li">
+                            <a href="javascript:;" class="dcjq-parent">
+                            <i class="fa fa-cogs"></i>
+                            <span>端末管理</span>
+                            <span class="dcjq-icon"></span></a>
+                            <ul class="sub" style="display: block;">
+                                <li><a href="{{route('employee_index')}}">社員名簿</a></li>
+                                <li><a href="{{route('department_index')}}">部署</a></li>
+                                <li><a href="{{route('depository_index')}}">保管場所</a></li>
+                                <li><a href="{{route('terminal_info_index')}}">端末情報</a></li>
+                                <li><a href="{{route('office_index')}}">office情報</a></li>
+                                {{-- <li><a href="{{route('cpu_index')}}">cpu</a></li> --}}
+                                {{-- <li><a href="{{route('memory_index')}}">メモリ</a></li> --}}
+                                {{-- <li><a href="{{route('hdd_index')}}">hdd</a></li> --}}
+                                {{-- <li><a href="{{route('os_index')}}">OS</a></li> --}}
+                            </ul>
                         </li>
-                        </span>
-                        <!--<li class="sub-menu">
-                          <a href="javascript:;" >
-                              <i class="fa fa-cogs"></i>
-                              <span>Components</span>
-                          </a>
-                          <ul class="sub">
-                              <li><a  href="calendar.html">Calendar</a></li>
-                              <li><a  href="gallery.html">Gallery</a></li>
-                              <li><a  href="todo_list.html">Todo List</a></li>
-                          </ul>
-                      </li>
+
+                        <!--</li>
                       <li class="sub-menu">
                           <a href="javascript:;" >
                               <i class="fa fa-book"></i>
@@ -290,8 +292,8 @@
                           </ul>
                       </li>
  -->
-                  </ul>
-                        <!-- sidebar menu end-->
+                    </ul>
+                    <!-- sidebar menu end-->
                 </div>
             </aside>
             <!--sidebar end-->
@@ -302,127 +304,160 @@
             </section>
         </section>
     </div>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{{ asset('js/jquery.js')}}"></script>
+    <script src="{{ asset('js/jquery-1.8.3.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script class="include" type="text/javascript" src="{{ asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
+    <script src="{{ asset('js/jquery.scrollTo.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.nicescroll.js')}}"></script>
+    <script src="{{ asset('js/jquery.sparkline.js')}}"></script>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-select.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/sweetalert.min.js') }}" type="text/javascript"></script>
     @if (Session::has('sweet_alert.alert'))
-        <script>
-            swal({
-                text: "{!! Session::get('sweet_alert.text') !!}",
-                title: "{!! Session::get('sweet_alert.title') !!}",
-                timer: {!! Session::get('sweet_alert.timer') !!},
-                icon: "{!! Session::get('sweet_alert.icon') !!}",
-                // more options
-            });
-        </script>
+    <script>
+        swal({
+            text: "{!! Session::get('sweet_alert.text') !!}",
+            title: "{!! Session::get('sweet_alert.title') !!}",
+            timer: {!!Session::get('sweet_alert.timer') !!},
+            icon: "{!! Session::get('sweet_alert.icon') !!}",
+            closeOnClickOutside: false,
+            // more options
+        });
+    </script>
     @endif
     <script>
         /*---LEFT BAR ACCORDION----*/
 
-$(function() {
-    $('.selectpicker').selectpicker();
-    $('#nav-accordion').dcAccordion({
-        eventType: 'click',
-        autoClose: true,
-        saveState: true,
-        disableLink: true,
-        speed: 'slow',
-        showCount: false,
-        autoExpand: true,
-//        cookie: 'dcjq-accordion-1',
-        classExpand: 'dcjq-current-parent'
-    });
-});
-
-var Script = function () {
-
-
-//    sidebar dropdown menu auto scrolling
-
-    jQuery('#sidebar .sub-menu > a').click(function () {
-        var o = ($(this).offset());
-        diff = 250 - o.top;
-        if(diff>0)
-            $("#sidebar").scrollTo("-="+Math.abs(diff),500);
-        else
-            $("#sidebar").scrollTo("+="+Math.abs(diff),500);
-    });
-
-
-
-//    sidebar toggle
-
-    $(function() {
-        function responsiveView() {
-            var wSize = $(window).width();
-            if (wSize <= 768) {
-                $('#container').addClass('sidebar-close');
-                $('#sidebar > ul').hide();
-            }
-
-            if (wSize > 768) {
-                $('#container').removeClass('sidebar-close');
-                $('#sidebar > ul').show();
-            }
-        }
-        $(window).on('load', responsiveView);
-        $(window).on('resize', responsiveView);
-    });
-
-    $('.fa-bars').click(function () {
-        if ($('#sidebar > ul').is(":visible") === true) {
-            $('#main-content').css({
-                'margin-left': '0px'
+        $(function() {
+            $('.selectpicker').selectpicker();
+            $('#nav-accordion').dcAccordion({
+                eventType: 'click',
+                autoClose: true,
+                saveState: true,
+                disableLink: true,
+                speed: 'slow',
+                showCount: false,
+                autoExpand: true,
+                //        cookie: 'dcjq-accordion-1',
+                classExpand: 'dcjq-current-parent'
             });
-            $('#sidebar').css({
-                'margin-left': '-210px'
+        });
+
+        var Script = function () {
+
+
+        //    sidebar dropdown menu auto scrolling
+
+            jQuery('#sidebar .sub-menu > a').click(function () {
+                var o = ($(this).offset());
+                diff = 250 - o.top;
+                if(diff>0)
+                    $("#sidebar").scrollTo("-="+Math.abs(diff),500);
+                else
+                    $("#sidebar").scrollTo("+="+Math.abs(diff),500);
             });
-            $('#sidebar > ul').hide();
-            $("#container").addClass("sidebar-closed");
-        } else {
-            $('#main-content').css({
-                'margin-left': '210px'
+
+
+
+            //    sidebar toggle
+
+            $(function() {
+                function responsiveView() {
+                    var wSize = $(window).width();
+                    if (wSize <= 768) {
+                        $('#container').addClass('sidebar-close');
+                        $('#sidebar > ul').hide();
+                    }
+
+                    if (wSize > 768) {
+                        $('#container').removeClass('sidebar-close');
+                        $('#sidebar > ul').show();
+                    }
+                }
+                $(window).on('load', responsiveView);
+                $(window).on('resize', responsiveView);
             });
-            $('#sidebar > ul').show();
-            $('#sidebar').css({
-                'margin-left': '0'
+
+            $('.fa-bars').click(function() {
+                if ($('#sidebar > ul').is(":visible") === true) {
+                    $('#main-content').css({
+                        'margin-left': '0px'
+                    });
+                    $('#sidebar').css({
+                        'margin-left': '-210px'
+                    });
+                    $('#sidebar > ul').hide();
+                    $("#container").addClass("sidebar-closed");
+                } else {
+                    $('#main-content').css({
+                        'margin-left': '210px'
+                    });
+                    $('#sidebar > ul').show();
+                    $('#sidebar').css({
+                        'margin-left': '0'
+                    });
+                    $("#container").removeClass("sidebar-closed");
+                }
             });
-            $("#container").removeClass("sidebar-closed");
-        }
-    });
 
-// custom scrollbar
-    $("#sidebar").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '3', cursorborderradius: '10px', background: '#404040', spacebarenabled:false, cursorborder: ''});
+            // custom scrollbar
+            $("#sidebar").niceScroll({
+                styler: "fb",
+                cursorcolor: "#4ECDC4",
+                cursorwidth: '3',
+                cursorborderradius: '10px',
+                background: '#404040',
+                spacebarenabled: false,
+                cursorborder: ''
+            });
 
-    $("html").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled:false,  cursorborder: '', zindex: '1000'});
+            $("html").niceScroll({
+                styler: "fb",
+                cursorcolor: "#4ECDC4",
+                cursorwidth: '6',
+                cursorborderradius: '10px',
+                background: '#404040',
+                spacebarenabled: false,
+                cursorborder: '',
+                zindex: '1000'
+            });
 
 
-}();
+        }();
+    </script>
 
-</script>
-
-<script>
-var url = window.location;
-     $('.sidebar-menu a[href="'+url+'"]').addClass('active');
-</script>
-
-
-
-@yield('scripts')
-@yield('scripts2')
-@yield('scripts3')
-
-<script>
+    <script>
     $(function(){
-        $('#no_user').bind('click', function(){
-            $(this.form).find("textarea, :text select").val("");
-       });
-    });
-</script>
+    $('#nav-accordion li').each(function(){
+        var url = window.location;
+        $('.sidebar-menu a[href="' + url + '"]').addClass('active')
+    })
+});
+    </script>
+
+    <script>
+
+    </script>
+
+
+
+    @yield('scripts')
+    @yield('scripts2')
+    @yield('scripts3')
+
+    <script>
+        $(function() {
+            $('#no_user').bind('click', function() {
+                $(this.form).find("textarea, :text select").val("");
+            });
+        });
+    </script>
 
 </body>
 

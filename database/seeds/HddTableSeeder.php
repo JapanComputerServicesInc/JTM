@@ -12,10 +12,10 @@ class HddTableSeeder extends Seeder
     public function run()
     {
         DB::table('hdd')->insert([
-             ['name' => '300GB'],
-             ['name' => '250GB'],
-             ['name' => '320GB'],
-             ['name' => '500GB']
+             ['name' => '250GB未満'],
+             ['name' => '250GB以上'],
+             ['name' => '500GB以上'],
+             ['name' => '1TB以上']
          ]);
     }
 }

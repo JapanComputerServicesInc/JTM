@@ -36,6 +36,7 @@
                             {{Form::text('pc_name',null,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
                         @endif
                     </div>
+
                     <label class="col-md-2 control-label"><i class="fa fa-list-ol"></i>稟議No</label>
                     <div class="col-md-4">
                         {{Form::text('approval_no',null,['class' => 'form-control', 'placeholder' => '入力してください'])}}
@@ -92,59 +93,45 @@
 
 
                 <div class="form-group">
-                    <label class="col-md-2 control-label"><i class="fa fa-list-ol"></i>モデル名</label>
-                        <div class="col-md-4">
-                            @if ($errors->has('model_name'))
-                                <div class="has-error">
-                                {{ Form::text('model_name', null, ['placeholder' => '必須項目です', 'class' => 'form-control']) }}
-                                    <span class="text-danger">
-                                        {{$errors->first('model_name')}}</span>
-                                    </div>
-                            @else
-                                {{ Form::text('model_name', null, ['placeholder' => '必須項目です', 'class' => 'form-control']) }}
-                            @endif
-                        </div>
                     <label class="col-md-2 control-label"><i class="fa fa-brain"></i>CPU</label>
                         <div class="col-md-4">
                             {{ Form::select('cpu', $cpu, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => 'true']) }}
                         </div>
-                </div>
-
-
-                <div class="form-group">
                     <label class="col-md-2 control-label"><i class="fa fa-save"></i>メモリ</label>
                         <div class="col-md-4">
                             {{ Form::select('memory', $memories, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
                         </div>
+                </div>
+
+
+                <div class="form-group">
                     <label class="col-md-2 control-label"><i class="fa fa-edit"></i>HDD</label>
                         <div class="col-md-4">
                             {{ Form::select('hdd', $hdd, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => 'true']) }}
                         </div>
-                </div>
-
-
-                <div class="form-group">
                     <label class="col-md-2 control-label"><i class="fab fa-apple"></i>OS</label>
                         <div class="col-md-4">
                             {{ Form::select('os', $os, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => 'true']) }}
                         </div>
-                    <label class="col-md-2 control-label"><i class="fab fa-windows"></i>Office</label>
-                        <div class="col-md-4">
-                            {{ Form::select('office_info', $office_info, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => 'true']) }}
-                        </div>
                 </div>
 
 
                 <div class="form-group">
+                    <label class="col-md-2 control-label"><i class="fab fa-windows"></i>Office</label>
+                        <div class="col-md-4">
+                            {{ Form::select('office_info', $office_info, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => 'true']) }}
+                        </div>
                     <label class="col-md-2 control-label"><i class="fa fa-edit"></i>メモ</label>
                         <div class="col-md-4">
                             {{Form::text('memo',null,['class' => 'form-control', 'placeholder' => '入力してください'])}}
                         </div>
+                </div>
+
+
                     {{-- <label class="col-md-2 control-label"><i class="fa fa-envelope"></i>QRコードURL</label>
                         <div class="col-md-4">
                             {{Form::text('qr_code',null,['class' => 'form-control', 'placeholder' => '入力してください'])}}
                         </div> --}}
-                </div>
 
 
                 <button id="check" type="button" class="center-block btn btn-round btn-success">登録</button>

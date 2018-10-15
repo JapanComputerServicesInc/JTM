@@ -18,7 +18,6 @@ class CreateTerminalManagementsTable extends Migration
             $table->timestamps();
             $table->string('approval_no')->nullable($value = true);
             $table->string('pc_name')->unique();
-            $table->string('model_name');
             $table->string('serial_no');
             $table->string('memo')->nullable($value = true);;
             $table->string('qr_code')->nullable($value = true);;

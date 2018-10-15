@@ -39,6 +39,7 @@
                             @endif
                         </div>
 
+
                         <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-list-ol"></i>稟議No</label>
                         <div class="col-md-4">
                             {{Form::text('approval_no',$terminal_managements->approval_no,['class' => 'form-control', 'placeholder' => '入力してください'])}}
@@ -62,7 +63,12 @@
                             @else
                                 {{ Form::select('depository', $depositories, $terminal_managements->depositories_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
                             @endif
-                      </div>
+                        {{-- <span class="input-group-btn">
+                            <button type="button" class="btn btn-success col" id="send" data-toggle="tooltip" data-placement="top" title="新規登録する">
+                                <i class="fas fa-clipboard"></i>
+                            </button>
+                        </span> --}}
+                    </div>
                     </div>
 
                     <div class="form-group">
@@ -93,63 +99,52 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-2 control-label"><i class="fa fa-list-ol"></i>モデル名</label>
-                            <div class="col-md-4">
-                                @if ($errors->has('model_name'))
-                                    <div class="has-error">
-                                    {{ Form::text('model_name', $terminal_managements->model_name, ['placeholder' => '必須項目です', 'class' => 'form-control']) }}
-                                        <span class="text-danger">
-                                            {{$errors->first('model_name')}}</span>
-                                        </div>
-                                @else
-                                    {{ Form::text('model_name', $terminal_managements->model_name, ['placeholder' => '必須項目です', 'class' => 'form-control']) }}
-                                @endif
-                            </div>
-
                         <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-brain"></i>CPU</label>
-                        <div class="col-md-4">
-                        {{ Form::select('cpu', $cpus, $terminal_managements->cpu_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
-                        </div>
-
-                    </div>
-
-                    <div class="form-group">
+                            <div class="col-md-4">
+                                {{ Form::select('cpu', $cpus, $terminal_managements->cpu_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
+                            </div>
                         <label class="col-lg-2 control-label"><i class="fa fa-save"></i>メモリ</label>
-                        <div class="col-md-4">
-                          {{ Form::select('memory', $memories, $terminal_managements->memories_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
-                      </div>
+                            <div class="col-md-4">
+                                {{ Form::select('memory', $memories, $terminal_managements->memories_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
+                            </div>
+                    </div>
 
+                    <div class="form-group">
                         <label class="col-lg-2 control-label"><i class="fa fa-edit"></i>HDD</label>
-                        <div class="col-md-4">
-                          {{ Form::select('hdd', $hdds, $terminal_managements->hdd_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
-                      </div>
-                    </div>
-
-                    <div class="form-group">
+                            <div class="col-md-4">
+                              {{ Form::select('hdd', $hdds, $terminal_managements->hdd_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
+                          </div>
                         <label class="col-lg-2 control-label"><i class="fab fa-apple"></i>OS</label>
-                        <div class="col-md-4">
-                          {{ Form::select('os', $oss, $terminal_managements->os_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
-                      </div>
-
-                        <label class="col-lg-2 control-label"><i class="fab fa-windows"></i>Office</label>
-                        <div class="col-md-4">
-                          {{ Form::select('office_information', $office_informations, $terminal_managements->office_informations_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
-                      </div>
+                            <div class="col-md-4">
+                                {{ Form::select('os', $oss, $terminal_managements->os_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
+                            </div>
                     </div>
 
                     <div class="form-group">
+                        <label class="col-lg-2 control-label"><i class="fab fa-windows"></i>Office</label>
+                            <div class="col-md-4">
+                                {{ Form::select('office_information', $office_informations, $terminal_managements->office_informations_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
+                            </div>
                         <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-edit"></i>メモ</label>
-                        <div class="col-md-4">
-                            {{Form::text('memo',$terminal_managements->memo,['class' => 'form-control', 'placeholder' => '入力してください'])}}
-                        </div>
-
-                        <label class="col-lg-2 col-sm-2 control-label"><i class="fa fa-envelope"></i>QRコードURL</label>
-                        <div class="col-md-4">
-                            {{Form::text('qr_code',$terminal_managements->qr_code,['id'=>'CopyTarget','class' => 'form-control', 'placeholder' => '入力してください','readonly'])}}
-                            <button type="button" class="btn btn-info" onclick="CopyToClipboard()" data-toggle="tooltip" data-placement="top" title="コピーする">
-                                <i class="fas fa-clipboard"></i></button>
-                        </div>
+                            <div class="col-md-4">
+                                {{Form::text('memo',$terminal_managements->memo,['class' => 'form-control', 'placeholder' => '入力してください'])}}
+                            </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"><i class="fa fa-envelope"></i>QRコードURL</label>
+                            <div class="input-group col-md-4">
+                                    {{Form::text('qr_code',$terminal_managements->qr_code,['id'=>'CopyTarget','class' => 'border border-info rounded text-secondary form-control','readonly'])}}
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-info col" onclick="CopyToClipboard()" data-toggle="tooltip" data-placement="top" title="コピーする">
+                                            <i class="fas fa-clipboard"></i>
+                                        </button>
+                                    </span>
+                            </div>
+                    </div>
+                </div>
+
+                </div>
 
                     <div class="row text-center">
                       <button type="submit" class="btn btn-round btn-success">編集</button>
@@ -168,6 +163,7 @@
 @endsection
 
 @section('scripts2')
+
     <script>
         function CopyToClipboard() {
             // コピー対象をJavaScript上で変数として定義する

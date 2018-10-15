@@ -19,18 +19,18 @@
                     </div>
                     <label class="col-md-1 control-label">保管場所</label>
                     <div class="col-lg-3">
-                        {{ Form::select('depository', $depositories, '', ['placeholder' => '選択してください', 'class' => 'form-control selectpicker']) }}
+                        {{ Form::select('depository', $depositories, '', ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
                     </div>
                     <label class="col-md-1 control-label">OS</label>
                     <div class="col-lg-3">
-                        {{ Form::select('os', $oss, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker']) }}
+                        {{ Form::select('os', $oss, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-1 col-xs-12 control-label">Office</label>
                     <div class="col-lg-3">
-                        {{ Form::select('office_information', $office_informations, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker']) }}
+                        {{ Form::select('office_information', $office_informations, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
                     </div>
                     {{-- <label class="col-md-1 col-xs-12 control-label">CPU</label>
                     <div class="col-lg-3">
@@ -38,17 +38,18 @@
                     </div> --}}
                     <label class="col-md-1 col-xs-12 control-label">メモリ</label>
                     <div class="col-lg-3">
-                        {{ Form::select('memory', $memories, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker']) }}
+                        {{ Form::select('memory', $memories, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
                     </div>
                 {{-- </div> --}}
 
                 {{-- <div class="form-group"> --}}
                     <label class="col-md-1 col-xs-12 control-label">HDD/SSD</label>
                     <div class="col-lg-3">
-                        {{ Form::select('hdd', $hdds, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker']) }}
+                        {{ Form::select('hdd', $hdds, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-md-1 col-xs-12 control-label">利用状況</label>
                   <label class="checkbox-inline">
                       {{ Form::radio('optionsRadios', '1') }}
                     使用中

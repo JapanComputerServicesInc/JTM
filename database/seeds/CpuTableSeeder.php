@@ -12,8 +12,10 @@ class CpuTableSeeder extends Seeder
     public function run()
     {
         DB::table('cpu')->insert([
-             ['name' => 'Corei3 370M(2.4GHz)'],
-             ['name' => 'Corei5-2410M(2.3GHz)']
+             ['name' => 'Corei3'],
+             ['name' => 'Corei5'],
+             ['name' => 'Corei7'],
+
          ]);
     }
 }

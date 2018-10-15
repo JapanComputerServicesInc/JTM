@@ -17,7 +17,7 @@ class CreateTerminalInformationsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('model_number');
+            $table->string('model_number')->nullable();
             $table->string('producer');
         });
     }

@@ -56,7 +56,6 @@ class AdminTerminalEditController extends Controller
      $depository = $request->input('depository');
      $product_name = $request->input('product_name');
      $serial_no = $request->input('serial_no');
-     $model_name = $request->input('model_name');
      $cpu = $request->input('cpu');
      $memory = $request->input('memory');
      $hdd = $request->input('hdd');
@@ -76,7 +75,6 @@ class AdminTerminalEditController extends Controller
      $terminal_managements->depositories_id = $depository;
      $terminal_managements->terminal_informations_id = $product_name;
      $terminal_managements->serial_no = $serial_no;
-     $terminal_managements->model_name = $model_name;
      $terminal_managements->cpu_id = $cpu;
      $terminal_managements->memories_id = $memory;
      $terminal_managements->hdd_id = $hdd;

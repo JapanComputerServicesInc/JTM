@@ -151,10 +151,15 @@ return [
     'attributes' => [
 
       'pc_name'=> 'ホスト名',
-      'model_name'=>'モデル名',
       'serial_no'=>'シリアルナンバー',
       'depository'=>'保管場所',
       'product_name'=>'製品名',
+      'department' =>'部署',
+      'employee'=>'社員',
+      'office'=>'オフィス',
+      'office_licenses_id'=>'ライセンス',
+      'producer'=>'メーカー',
+      'model_number'=>'モデル番号'
 
 
     ],

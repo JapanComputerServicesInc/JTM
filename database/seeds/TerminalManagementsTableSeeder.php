@@ -14,7 +14,6 @@ class TerminalManagementsTableSeeder extends Seeder
         DB::table('terminal_managements')->insert([
                 ['approval_no' =>'IS31006',
                 'pc_name' => 'J1NL1106Q2',
-                'model_name' => '3249MGJ',
                 'serial_no' => 'R9-5BXCE',
                 'status_id'=>'1',
                 'depositories_id' => '1',
@@ -28,7 +27,6 @@ class TerminalManagementsTableSeeder extends Seeder
                 ],
                 ['approval_no' =>'JT33001',
                 'pc_name' => 'J1NS1110Q6',
-                'model_name' => '3249MGJ',
                 'serial_no' => '27544329 1000793',
                 'status_id'=>'2',
                 'depositories_id' => '2',
