@@ -18,7 +18,7 @@
                     <tbody>
                         @foreach ($departments as $department)
                             <tr>
-                                <td >{{link_to_route('department_edit', $department->id , $department->id)}}</td>
+                                <td>{{link_to_route('department_edit', $department->id , $department->id)}}</td>
                                 <td>{{$department->name}}</td>
                             </tr>
                         @endforeach

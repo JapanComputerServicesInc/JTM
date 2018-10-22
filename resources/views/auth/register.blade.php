@@ -14,13 +14,15 @@
                         <label for="name" class="col-md-4 col-form-label text-center">{{ __('Name') }}</label>
 
                         <div class="col-md-7">
-                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                            @if ($errors->has('name'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('name') }}</strong>
-                            </span>
-                            @endif
+                        @if ($errors->has('name'))
+                            <div class="has-error">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                {{-- 赤字がでる--}}
+                                <label class="control-label" for="InputText3"><strong>{{ $errors->first('name') }}</strong></label>
+                            </div>
+                        @else
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                        @endif
                         </div>
                     </div>
 
@@ -28,12 +30,13 @@
                         <label for="email" class="col-md-4 col-form-label text-center">{{ __('E-Mail Address') }}</label>
 
                         <div class="col-md-7">
-                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
                             @if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
+                                <div class="has-error">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                    <label class="control-label" for="InputText3"><strong>{{ $errors->first('email') }}</strong></label>
+                                </div>
+                            @else
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                             @endif
                         </div>
                     </div>
@@ -42,12 +45,13 @@
                         <label for="password" class="col-md-4 col-form-label text-center">{{ __('Password') }}</label>
 
                         <div class="col-md-7">
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
                             @if ($errors->has('password'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
+                                <div class="has-error">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+                                    <label class="control-label" for="InputText3"><strong>{{ $errors->first('password') }}</strong></label>
+                                </div>
+                            @else
+                                <input id="password" type="password" class="form-control" name="password" required>
                             @endif
                         </div>
                     </div>

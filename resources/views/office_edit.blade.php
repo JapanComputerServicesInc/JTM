@@ -15,7 +15,7 @@
                         @if ($errors->has('office'))
                             <div class="has-error">
                                 {{ Form::text('office', $office_information->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('office')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('office') }}</label>
                             </div>
                         @else
                             {{ Form::text('office', $office_information->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
@@ -26,7 +26,7 @@
                             @if ($errors->has('office_licenses_id'))
                                 <div class="has-error">
                                     {{ Form::select('office_licenses_id', $license,$office_information->office_licenses_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
-                                    <span class="text-danger">{{$errors->first('office_licenses_id')}}</span>
+                                    <label class="control-label" for="InputText3">{{ $errors->first('office_licenses_id') }}</label>
                                 </div>
                             @else
                                 {{ Form::select('office_licenses_id', $license,$office_information->office_licenses_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
@@ -37,7 +37,9 @@
                 <div class="row">
                     <div class="col-md-7">
                     @if ($errors->has('office_information'))
-                            <span name="office_information" class="text-danger">{{$errors->first('office_information')}}</span>
+                        <div class="has-error">
+                            <label class="control-label" for="InputText3">{{ $errors->first('office_information') }}</label>
+                        </div>
                     @endif
                     </div>
                      <div class="col-sm-12 pull-right text-right">

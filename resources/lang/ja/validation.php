@@ -163,7 +163,10 @@ return [
       'office'=>'オフィス',
       'office_licenses_id'=>'ライセンス',
       'producer'=>'メーカー',
-      'model_number'=>'モデル番号'
+      'model_number'=>'モデル番号',
+      'name' => '氏名',
+      'email' => 'Eメール',
+      'password' => 'パスワード',
 
 
     ],

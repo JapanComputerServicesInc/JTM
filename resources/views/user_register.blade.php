@@ -22,7 +22,9 @@
                         <label>{{ Form::radio('status', '2',true) }}未使用</label>
                     @endif
                 </div>
-            <label class="text-danger control-label"> ※返却する場合は未使用を選択して、登録してください。</label>
+                <div class="has-error">
+                    <label class="control-label" for="InputText3">※返却する場合は未使用を選択して、登録してください。</label>
+                </div>
         </div>
 
         <div class="form-group">
@@ -31,7 +33,7 @@
               @if ($errors->has('employee'))
                   <div class="has-error">
                       {{ Form::select('employee', $employees,  $terminal_management->employees_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
-                      <span class="text-danger">{{$errors->first('employee')}}</span>
+                      <label class="control-label" for="InputText3">{{ $errors->first('employee') }}</label>
                   </div>
               @else
                   {{ Form::select('employee', $employees,  $terminal_management->employees_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker','data-live-search' => "true"]) }}
@@ -44,9 +46,8 @@
               <div class="col-lg-5">
                   @if ($errors->has('depository'))
                       <div class="has-error">
-                          {{ Form::select('depository', $depositories, $terminal_management->depositories_id, ['placeholder' => '選択してください', 'class' => 'form-control']) }}
-                          <span class="text-danger">
-                              {{$errors->first('depository')}}</span>
+                          {{ Form::select('depository', $depositories, $terminal_management->depositories_id, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
+                          <label class="control-label" for="InputText3">{{ $errors->first('depository') }}</label>
                       </div>
                 @else
                     {{ Form::select('depository', $depositories, $terminal_management->depositories_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}

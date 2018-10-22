@@ -15,7 +15,7 @@
                         @if ($errors->has('product_name'))
                             <div class="has-error">
                                 {{ Form::text('product_name',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('product_name')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('product_name') }}</label>
                             </div>
                         @else
                             {{ Form::text('product_name',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
@@ -26,7 +26,7 @@
                         @if ($errors->has('producer'))
                             <div class="has-error">
                                 {{ Form::text('producer', null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('producer')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('producer') }}</label>
                             </div>
                         @else
                             {{ Form::text('producer', null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
@@ -39,7 +39,7 @@
                         @if ($errors->has('model_number'))
                             <div class="has-error">
                                 {{ Form::text('model_number',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('model_number')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('model_number') }}</label>
                             </div>
                         @else
                             {{ Form::text('model_number',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}

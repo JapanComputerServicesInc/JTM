@@ -227,16 +227,16 @@
                         <h5 class="centered">Welcome To JTM!!</h5>
                         @if (Auth::guest())
                         @else
-                            <li class="mt">
-                                <a href="{{route('terminal_new')}}">
+                            <li class="sub-menu">
+                                <a class="@if(strpos(request()->url(), route('terminal_new')) !== false) active @endif" href="{{route('terminal_new')}}">
                                   <i class="fas fa-tachometer-alt"></i>
                                   <span>新規</span>
                               </a>
                             </li>
                         @endif
 
-                        <li class="sub-menu active">
-                            <a href="{{route('terminal_index')}}">
+                        <li class="sub-menu">
+                            <a class="@if(strpos(request()->url(), route('terminal_index')) !== false) active @endif" href="{{route('terminal_index')}}">
                               <i class="fa fa-desktop"></i>
                               <span>一覧</span>
                             </a>
@@ -245,13 +245,13 @@
                         @if (Auth::guest())
                         @else
                             <li class="sub-menu">
-                                <a href="javascript:;" class="dcjq-parent"><i class="fa fa-cogs"></i><span>端末管理</span></a>
+                                <a href="javascript:;" class="dcjq-parent @if(request()->route()->getPrefix() == "admin/management") active @endif"><i class="fa fa-cogs"></i><span>端末管理</span></a>
                                 <ul class="sub">
-                                    <li><a href="{{route('employee_index')}}">社員名簿</a></li>
-                                    <li><a href="{{route('department_index')}}">部署</a></li>
-                                    <li><a href="{{route('depository_index')}}">保管場所</a></li>
-                                    <li><a href="{{route('terminal_info_index')}}">端末情報</a></li>
-                                    <li><a href="{{route('office_index')}}">office情報</a></li>
+                                    <li class="@if(strpos(request()->url(), route('employee_index')) !== false) active @endif"><a href="{{route('employee_index')}}">社員名簿</a></li>
+                                    <li class="@if(strpos(request()->url(), route('department_index')) !== false) active @endif"><a href="{{route('department_index')}}">部署</a></li>
+                                    <li class="@if(strpos(request()->url(), route('depository_index')) !== false) active @endif"><a href="{{route('depository_index')}}">保管場所</a></li>
+                                    <li class="@if(strpos(request()->url(), route('terminal_info_index')) !== false) active @endif"><a href="{{route('terminal_info_index')}}">端末情報</a></li>
+                                    <li class="@if(strpos(request()->url(), route('office_index')) !== false) active @endif"><a href="{{route('office_index')}}">office情報</a></li>
                                 </ul>
                             </li>
                         @endif
@@ -340,7 +340,6 @@
         /*---LEFT BAR ACCORDION----*/
 
         $(function() {
-            $('.selectpicker').selectpicker();
             $('#nav-accordion').dcAccordion({
                 eventType: 'click',
                 autoClose: true,

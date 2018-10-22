@@ -26,7 +26,7 @@ class DepositoryManagementController extends Controller
 
     public function create(DepositoryUpdateRequest $request)
     {
-     $depository= $request->input('depository');
+     $depository= $request->input('depository_name');
      Depository::create([
         'name' => $depository,
      ]);

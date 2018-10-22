@@ -15,7 +15,8 @@
                         @if ($errors->has('employee'))
                             <div class="has-error">
                                 {{ Form::text('employee',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('employee')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('employee') }}</label>
+
                             </div>
                         @else
                             {{ Form::text('employee',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
@@ -26,7 +27,7 @@
                         @if ($errors->has('department'))
                             <div class="has-error">
                                 {{ Form::select('department', $departments, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
-                                <span class="text-danger">{{$errors->first('department')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('department') }}</label>
                             </div>
                         @else
                             {{ Form::select('department', $departments, null, ['placeholder' => '選択してください', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}

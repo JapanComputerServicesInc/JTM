@@ -52,7 +52,7 @@ class AdminTerminalEditController extends Controller
         $pc_name = $request->input('pc_name');
         $approval_no = $request->input('approval_no');
         $employee = $request->input('employee');
-        $depository = $request->input('depository');
+        $depository = $request->input('depository_name');
         $product_name = $request->input('product_name');
         $serial_no = $request->input('serial_no');
         $cpu = $request->input('cpu');

@@ -57,7 +57,7 @@ class AdminTerminalNewController extends Controller
          }else{
              $employee = null;
          }
-         $depositories_id = $request->input('depository');
+         $depositories_id = $request->input('depository_name');
          $terminal_info_id = $request->input('product_name');
          $serial_no = $request->input('serial_no');
          $cpu_id = $request->input('cpu');

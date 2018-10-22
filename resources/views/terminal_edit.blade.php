@@ -43,7 +43,7 @@
                                 @if ($errors->has('pc_name'))
                                     <div class="has-error">
                                         {{Form::text('pc_name',$terminal_managements->pc_name,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
-                                        <span class="text-danger">{{$errors->first('pc_name')}}</span>
+                                        <label class="control-label" for="InputText3">{{ $errors->first('pc_name') }}</label>
                                     </div>
                                 @else
                                     {{Form::text('pc_name',$terminal_managements->pc_name,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
@@ -77,14 +77,13 @@
                                 @if (Auth::guest())
                                     <span>{{$terminal_managements->depository->name}}</span>
                                 @else
-                                    @if ($errors->has('depository'))
+                                    @if ($errors->has('depository_name'))
                                         <div class="has-error">
-                                            {{ Form::select('depository', $depositories, $terminal_managements->depositories_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
-                                              <span class="text-danger">
-                                                {{$errors->first('depository')}}</span>
+                                            {{ Form::select('depository_name', $depositories, $terminal_managements->depositories_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
+                                              <label class="control-label" for="InputText3">{{ $errors->first('depository_name') }}</label>
                                         </div>
                                     @else
-                                        {{ Form::select('depository', $depositories, $terminal_managements->depositories_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
+                                        {{ Form::select('depository_name', $depositories, $terminal_managements->depositories_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
                                     @endif
                                 @endif
                         {{-- <span class="input-group-btn">
@@ -104,8 +103,7 @@
                                     @if ($errors->has('product_name'))
                                         <div class="has-error">
                                         {{ Form::select('product_name', $terminal_informations, $terminal_managements->terminal_informations_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
-                                        <span class="text-danger">
-                                            {{$errors->first('product_name')}}</span>
+                                        <label class="control-label" for="InputText3">{{ $errors->first('product_name') }}</label>
                                         </div>
                                     @else
                                         {{ Form::select('product_name', $terminal_informations, $terminal_managements->terminal_informations_id, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
@@ -121,7 +119,7 @@
                                 @if ($errors->has('serial_no'))
                                     <div class="has-error">
                                     {{Form::text('serial_no',$terminal_managements->serial_no,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
-                                        <span class="text-danger">{{$errors->first('serial_no')}}</span>
+                                        <label class="control-label" for="InputText3">{{ $errors->first('serial_no') }}</label>
                                     </div>
                                 @else
                                     {{Form::text('serial_no',$terminal_managements->serial_no,['class' => 'form-control', 'placeholder' => '必須項目です'])}}

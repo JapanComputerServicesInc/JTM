@@ -12,13 +12,14 @@
                 <div class="form-group">
                     <label class="col-lg-2 col-sm-2 col-md-4 control-label"><i class="fa fa-archive"></i>保管場所</label>
                         <div class="col-md-4">
-                            @if ($errors->has('depository'))
+                            @if ($errors->has('depository_name'))
                                 <div class="has-error">
-                                    {{ Form::text('depository',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                    <span class="text-danger">{{$errors->first('depository')}}</span>
+                                    {{ Form::text('depository_name',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
+                                    <label class="control-label" for="InputText3">{{ $errors->first('depository_name') }}</label>
+
                                 </div>
                             @else
-                                {{ Form::text('depository',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
+                                {{ Form::text('depository_name',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
                             @endif
                         </div>
                 </div>

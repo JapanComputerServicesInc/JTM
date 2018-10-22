@@ -32,7 +32,7 @@ class TerminalCreateRequest extends FormRequest
         'pc_name'=> 'required|' .$unique,
         'serial_no'=>'required',
         'status'=>'required',
-        'depository'=>'required',
+        'depository_name'=>'required',
         'product_name'=>'required',
 
 

@@ -16,7 +16,8 @@
                         @if ($errors->has('depository_name'))
                             <div class="has-error">
                                 {{ Form::text('depository_name', $depositories->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('depository_name')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('depository_name') }}</label>
+
                             </div>
                         @else
                             {{ Form::text('depository_name', $depositories->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
@@ -27,7 +28,9 @@
                     <div class="row">
                         <div class="col-md-7">
                         @if ($errors->has('depository'))
-                                <span name="depository" class="text-danger">{{$errors->first('depository')}}</span>
+                            <div class="has-error">
+                                <label class="control-label" for="InputText3">{{ $errors->first('depository') }}</label>
+                            </div>
                         @endif
                         </div>
                          <div class="col-sm-12 pull-right text-right">

@@ -15,7 +15,7 @@
                         @if ($errors->has('department'))
                             <div class="has-error">
                                 {{ Form::text('department',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('department')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('department') }}</label>
                             </div>
                         @else
                             {{ Form::text('department',null, ['placeholder' => '入力してください', 'class' => 'form-control']) }}

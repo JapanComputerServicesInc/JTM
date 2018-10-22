@@ -30,7 +30,7 @@
                         @if ($errors->has('pc_name'))
                             <div class="has-error">
                                 {{Form::text('pc_name',null,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
-                                <span class="text-danger">{{$errors->first('pc_name')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('pc_name') }}</label>
                             </div>
                         @else
                             {{Form::text('pc_name',null,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
@@ -51,14 +51,13 @@
                         </div>
                     <label class="col-md-2 control-label"><i class="fa fa-save"></i>保管場所</label>
                         <div class="col-md-4">
-                            @if ($errors->has('depository'))
+                            @if ($errors->has('depository_name'))
                                 <div class="has-error">
-                                    {{ Form::select('depository', $depositories, null, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
-                                      <span class="text-danger">
-                                        {{$errors->first('depository')}}</span>
+                                    {{ Form::select('depository_name', $depositories, null, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
+                                      <label class="control-label" for="InputText3">{{ $errors->first('depository_name') }}</label>
                                 </div>
                             @else
-                                {{ Form::select('depository', $depositories, null, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
+                                {{ Form::select('depository_name', $depositories, null, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => 'true']) }}
                             @endif
                         </div>
                 </div>
@@ -70,8 +69,7 @@
                             @if ($errors->has('product_name'))
                                 <div class="has-error">
                                 {{ Form::select('product_name', $terminal_informations, null, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
-                                <span class="text-danger">
-                                    {{$errors->first('product_name')}}</span>
+                                <label class="control-label" for="InputText3">{{ $errors->first('product_name') }}</label>
                                 </div>
                             @else
                                 {{ Form::select('product_name', $terminal_informations, null, ['placeholder' => '必須項目です', 'class' => 'form-control selectpicker', 'data-live-search' => "true"]) }}
@@ -82,8 +80,7 @@
                             @if ($errors->has('serial_no'))
                                 <div class="has-error">
                                 {{Form::text('serial_no',null,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
-                                    <span class="text-danger">
-                                        {{$errors->first('serial_no')}}</span>
+                                    <label class="control-label" for="InputText3">{{ $errors->first('serial_no') }}</label>
                                     </div>
                             @else
                                 {{Form::text('serial_no',null,['class' => 'form-control', 'placeholder' => '必須項目です'])}}
