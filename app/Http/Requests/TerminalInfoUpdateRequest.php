@@ -23,10 +23,14 @@ class TerminalInfoUpdateRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->id) { // 編集画面の時
+           $unique = 'unique:terminal_informations,name,' . $this->id . ',id';
+        } else { // 新規登録画面の時
+           $unique = 'unique:terminal_informations,name';
+        }
         return [
-        'product_name'=>'required',
+        'product_name'=>'required|' .$unique,
         'producer'=>'required',
-        // 'model_number'=>'required'
 
 
         ];

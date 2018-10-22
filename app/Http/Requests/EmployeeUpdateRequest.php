@@ -23,11 +23,14 @@ class EmployeeUpdateRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->id) { // 編集画面の時
+           $unique = 'unique:employees,name,' . $this->id . ',id';
+        } else { // 新規登録画面の時
+           $unique = 'unique:employees,name';
+        }
         return [
-        'employee'=>'required',
+        'employee'=>'required|' .$unique,
         'department'=>'required'
-
-
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\OfficeUpdateRequest;
+use App\Http\Requests\OfficeDestroyRequest;
 use App\OfficeInformation;
 use App\OfficeLicense;
 
@@ -61,7 +62,7 @@ class OfficeManagementController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(OfficeDestroyRequest $request,$id)
     {
     $office_information = OfficeInformation::find($id);
     $office_information->delete();

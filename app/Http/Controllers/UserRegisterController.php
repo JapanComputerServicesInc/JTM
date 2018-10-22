@@ -40,7 +40,7 @@ class UserRegisterController extends Controller
         $terminal_management->status_id = $status_id;
         $terminal_management->update();
         \Alert::success('', '登録が完了しました。');
-       return redirect()->route('user_register_edit',['pc_name' => $terminal_management->pc_name]);
+       return redirect()->route('terminal_index',['pc_name' => $terminal_management->pc_name]);
 
     }
 }

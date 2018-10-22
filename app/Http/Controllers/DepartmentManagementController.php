@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\DepartmentUpdateRequest;
+use App\Http\Requests\DepartmentDestroyRequest;
 use App\Department;
 
 class DepartmentManagementController extends Controller
@@ -56,7 +57,7 @@ class DepartmentManagementController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(DepartmentDestroyRequest $request, $id)
     {
     $departments = Department::find($id);
     $departments->delete();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\EmployeeUpdateRequest;
+use App\Http\Requests\EmployeeDestroyRequest;
 use App\Employee;
 use App\Department;
 
@@ -62,7 +63,7 @@ class EmployeeManagementController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(EmployeeDestroyRequest $request,$id)
     {
     $employees = Employee::find($id);
     $employees->delete();

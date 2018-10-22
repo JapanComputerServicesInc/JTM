@@ -23,11 +23,13 @@ class DepositoryUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-        'depository'=>'required'
+        if ($this->id) { // 編集画面の時
+           $unique = 'unique:depositories,name,' . $this->id . ',id';
+        } else { // 新規登録画面の時
+           $unique = 'unique:depositories,name';
+        }
 
-
-        ];
+       return [ 'depository_name'=>'required|' . $unique];
     }
 
 }

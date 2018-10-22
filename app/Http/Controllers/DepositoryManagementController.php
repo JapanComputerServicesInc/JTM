@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\DepositoryUpdateRequest;
+use App\Http\Requests\DepositoryDestroyRequest;
 use App\Depository;
 
 class DepositoryManagementController extends Controller
@@ -47,7 +48,7 @@ class DepositoryManagementController extends Controller
     public function update(DepositoryUpdateRequest $request,$id)
     {
      $depositories = Depository::find($id);
-     $depository = $request->input('depository');
+     $depository = $request->input('depository_name');
      $depositories->name = $depository;
      $depositories->update();
 
@@ -56,7 +57,7 @@ class DepositoryManagementController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(DepositoryDestroyRequest $request,$id)
     {
     $depositories = Depository::find($id);
     $depositories->delete();

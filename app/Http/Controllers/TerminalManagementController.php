@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TerminalInfoUpdateRequest;
+use App\Http\Requests\TerminalInfoDestroyRequest;
 use App\TerminalInformation;
 
 class TerminalManagementController extends Controller
@@ -65,7 +66,7 @@ class TerminalManagementController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(TerminalInfoDestroyRequest $request,$id)
     {
     $terminal_informations = TerminalInformation::find($id);
     $terminal_informations->delete();

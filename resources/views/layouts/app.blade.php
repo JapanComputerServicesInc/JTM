@@ -53,9 +53,9 @@
                 <!--logo start-->
                 <a href="{{route('terminal_index')}}" class="logo"><b>JCS Terminal Management</b></a>
                 <!--logo end-->
-                <div class="nav notify-row" id="top_menu">
+                {{-- <div class="nav notify-row" id="top_menu"> --}}
                     <!--  notification start -->
-                    <ul class="nav top-menu">
+                    {{-- <ul class="nav top-menu"> --}}
                         <!-- settings start -->
                         <!--<li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
@@ -190,17 +190,23 @@
                             </ul>
                         </li> -->
                         <!-- inbox dropdown end -->
-                    </ul>
+                    {{-- </ul> --}}
                     <!--  notification end -->
-                </div>
+                {{-- </div> --}}
                 <div class="top-menu">
                     <ul class="nav pull-right top-menu">
                         <li>
-                            <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @if (!Auth::guest())
+                                <button type="button" class="btn btn-theme02"  onclick="event.preventDefault();
+                                                         document.getElementById('resister').submit();">Resister</button>
+                                <form id="resister" action="{{ route('register') }}" style="display: none;">
+                                </form>
+                                <button type="button" class="btn btn-theme" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">Logout</button>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
-                            </form>
+                                </form>
+                            @endif
                         </li>
                     </ul>
                 </div>
@@ -219,39 +225,38 @@
 
                         <p class="centered"><img src="{{asset('images/sub-dog.jpg')}}" class="img-circle" width="100"></a></p>
                         <h5 class="centered">Welcome To JTM!!</h5>
-                        <li class="sub-menu">
-                            <a href="{{route('terminal_new')}}">
-                              <i class="fas fa-tachometer-alt"></i>
-                              <span>新規</span>
-                          </a>
-                        </li>
+                        @if (Auth::guest())
+                        @else
+                            <li class="mt">
+                                <a href="{{route('terminal_new')}}">
+                                  <i class="fas fa-tachometer-alt"></i>
+                                  <span>新規</span>
+                              </a>
+                            </li>
+                        @endif
 
-                        <li class="sub-menu">
+                        <li class="sub-menu active">
                             <a href="{{route('terminal_index')}}">
                               <i class="fa fa-desktop"></i>
                               <span>一覧</span>
                             </a>
                         </li>
-                        <li class="sub-menu dcjq-parent-li">
-                            <a href="javascript:;" class="dcjq-parent">
-                            <i class="fa fa-cogs"></i>
-                            <span>端末管理</span>
-                            <span class="dcjq-icon"></span></a>
-                            <ul class="sub" style="display: block;">
-                                <li><a href="{{route('employee_index')}}">社員名簿</a></li>
-                                <li><a href="{{route('department_index')}}">部署</a></li>
-                                <li><a href="{{route('depository_index')}}">保管場所</a></li>
-                                <li><a href="{{route('terminal_info_index')}}">端末情報</a></li>
-                                <li><a href="{{route('office_index')}}">office情報</a></li>
-                                {{-- <li><a href="{{route('cpu_index')}}">cpu</a></li> --}}
-                                {{-- <li><a href="{{route('memory_index')}}">メモリ</a></li> --}}
-                                {{-- <li><a href="{{route('hdd_index')}}">hdd</a></li> --}}
-                                {{-- <li><a href="{{route('os_index')}}">OS</a></li> --}}
-                            </ul>
-                        </li>
 
-                        <!--</li>
-                      <li class="sub-menu">
+                        @if (Auth::guest())
+                        @else
+                            <li class="sub-menu">
+                                <a href="javascript:;" class="dcjq-parent"><i class="fa fa-cogs"></i><span>端末管理</span></a>
+                                <ul class="sub">
+                                    <li><a href="{{route('employee_index')}}">社員名簿</a></li>
+                                    <li><a href="{{route('department_index')}}">部署</a></li>
+                                    <li><a href="{{route('depository_index')}}">保管場所</a></li>
+                                    <li><a href="{{route('terminal_info_index')}}">端末情報</a></li>
+                                    <li><a href="{{route('office_index')}}">office情報</a></li>
+                                </ul>
+                            </li>
+                        @endif
+
+                      {{-- <li class="sub-menu">
                           <a href="javascript:;" >
                               <i class="fa fa-book"></i>
                               <span>Extra Pages</span>
@@ -261,7 +266,8 @@
                               <li><a  href="login.html">Login</a></li>
                               <li><a  href="lock_screen.html">Lock Screen</a></li>
                           </ul>
-                      </li>
+                      </li> --}}
+                      <!--
                       <li class="sub-menu">
                           <a href="javascript:;" >
                               <i class="fa fa-tasks"></i>
@@ -307,16 +313,15 @@
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="{{ asset('js/jquery.js')}}"></script>
     <script src="{{ asset('js/jquery-1.8.3.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <script class="include" type="text/javascript" src="{{ asset('js/jquery.dcjqaccordion.2.7.js')}}"></script>
     <script src="{{ asset('js/jquery.scrollTo.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.nicescroll.js')}}"></script>
-    <script src="{{ asset('js/jquery.sparkline.js')}}"></script>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jquery.nicescroll.js') }}" type="text/javascript"></script>
+
+    <!--common script for all pages-->
+    <script src="{{ asset('js/common-scripts.js')}}"></script>
+    <!-- Scripts -->
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-select.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/sweetalert.min.js') }}" type="text/javascript"></script>
     @if (Session::has('sweet_alert.alert'))
@@ -331,7 +336,7 @@
         });
     </script>
     @endif
-    <script>
+    {{-- <script>
         /*---LEFT BAR ACCORDION----*/
 
         $(function() {
@@ -427,38 +432,74 @@
                 cursorborder: '',
                 zindex: '1000'
             });
+            // widget tools
 
+                jQuery('.panel .tools .fa-chevron-down').click(function () {
+                    var el = jQuery(this).parents(".panel").children(".panel-body");
+                    if (jQuery(this).hasClass("fa-chevron-down")) {
+                        jQuery(this).removeClass("fa-chevron-down").addClass("fa-chevron-up");
+                        el.slideUp(200);
+                    } else {
+                        jQuery(this).removeClass("fa-chevron-up").addClass("fa-chevron-down");
+                        el.slideDown(200);
+                    }
+                });
+
+                jQuery('.panel .tools .fa-times').click(function () {
+                    jQuery(this).parents(".panel").parent().remove();
+                });
+
+
+            //    tool tips
+
+                $('.tooltips').tooltip();
+
+            //    popovers
+
+                $('.popovers').popover();
+
+
+
+            // custom bar chart
+
+                if ($(".custom-bar-chart")) {
+                    $(".bar").each(function () {
+                        var i = $(this).find(".value").html();
+                        $(this).find(".value").html("");
+                        $(this).find(".value").animate({
+                            height: i
+                        }, 2000)
+                    })
+                }
 
         }();
-    </script>
-
-    <script>
-    $(function(){
-    $('#nav-accordion li').each(function(){
-        var url = window.location;
-        $('.sidebar-menu a[href="' + url + '"]').addClass('active')
-    })
-});
-    </script>
-
-    <script>
-
-    </script>
-
-
-
+    </script> --}}
     @yield('scripts')
     @yield('scripts2')
     @yield('scripts3')
 
     <script>
-        $(function() {
-            $('#no_user').bind('click', function() {
-                $(this.form).find("textarea, :text select").val("");
-            });
-        });
-    </script>
+    $(function() {
+        function responsiveView() {
+            var wSize = $(window).width();
+            if (wSize <= 768) {
+                $('#container').addClass('sidebar-close');
+                $('#sidebar > ul').hide();
+            }
 
+            if (wSize > 768) {
+                $('#container').removeClass('sidebar-close');
+                $('#sidebar > ul').show();
+            }
+        }
+        $(window).on('load', responsiveView);
+        $(window).on('resize', responsiveView);
+
+        $('#no_user').bind('click', function() {
+            $(this.form).find("textarea, :text, select").val("");
+        });
+    });
+    </script>
 </body>
 
 </html>

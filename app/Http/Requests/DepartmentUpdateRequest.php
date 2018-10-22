@@ -23,11 +23,13 @@ class DepartmentUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-        'department'=>'required'
+        if ($this->id) { // 編集画面の時
+           $unique = 'unique:departments,name,' . $this->id . ',id';
+       } else { // 新規登録画面の時
+           $unique = 'unique:departments,name';
+       }
 
-
-        ];
+        return ['department'=>'required|' . $unique];
     }
 
 }

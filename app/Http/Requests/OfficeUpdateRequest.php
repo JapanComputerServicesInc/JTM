@@ -23,8 +23,13 @@ class OfficeUpdateRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->id) { // 編集画面の時
+           $unique = 'unique:office_informations,name,' . $this->id . ',id';
+        } else { // 新規登録画面の時
+           $unique = 'unique:office_informations,name';
+        }
         return [
-        'office'=>'required',
+        'office'=>'required|' .$unique,
         'office_licenses_id'=>'required'
     ];
     }

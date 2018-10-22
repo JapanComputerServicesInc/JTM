@@ -62,7 +62,7 @@
 
                     <div class="form-group">
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-theme">
+                            <button type="submit" class="btn btn-theme02">
                             {{ __('Register') }}
                             </button>
                         </div>

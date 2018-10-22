@@ -120,7 +120,11 @@ return [
 
 
 
-    'custom' => ['exists-department-id-in-employee' => '対象の部門に設定されている社員がいます。設定されている社員がいる間は削除出来ません。',
+    'custom' => ['exists-department-id-in-employee' => "対象の部署に設定されている社員がいます。設定されている社員がいる間は削除出来ません。",
+    'exists-employee-id-in-terminal' =>"対象の社員が使用している端末があります。設定している端末がある間は削除できません。",
+    'exists-depository-id-in-terminal' =>"対象の保管場所に設定している端末があります。設定している端末がある間は削除できません。",
+    'exists-terminal_information-id-in-terminal' =>"対象の端末情報を設定している端末があります。設定している端末がある間は削除できません。",
+    'exists-office_information-id-in-terminal' =>"対象のOffice情報を設定している端末があります。設定している端末がある間は削除できません。",
         'attribute-name' => [  'rule-name' => 'custom-message' ],
     ],
 
@@ -152,7 +156,7 @@ return [
 
       'pc_name'=> 'ホスト名',
       'serial_no'=>'シリアルナンバー',
-      'depository'=>'保管場所',
+      'depository_name'=>'保管場所',
       'product_name'=>'製品名',
       'department' =>'部署',
       'employee'=>'社員',

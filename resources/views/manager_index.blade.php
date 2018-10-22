@@ -133,7 +133,7 @@
         $(function(){
             // 入力値をリセット
             $('#clearForm').bind('click', function(){
-                $(this.form).find("textarea, :text select").val("");
+                $(this.form).find("textarea, :text, select").val("");
                 $(this.form).find(".selectpicker").selectpicker('val', '');
                 // $(this.form).find(":checkbox:checked").prop("checked", false);
                 $(this.form).find(":radio[value='']").prop("checked", true);

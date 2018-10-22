@@ -25,6 +25,11 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-md-7">
+                        @if ($errors->has('v_department'))
+                                <span name="v_department" class="text-danger">{{$errors->first('v_department')}}</span>
+                        @endif
+                        </div>
                          <div class="col-sm-12 pull-right text-right">
                               <button type="submit" class="btn btn-round btn-success">編集</button>
                               <button id="delete" type="button" class="btn btn-round btn-danger">削除</button>

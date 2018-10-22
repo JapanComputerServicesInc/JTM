@@ -23,8 +23,13 @@ class TerminalCreateRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->id) { // 編集画面の時
+           $unique = 'unique:terminal_managements,pc_name,' . $this->id . ',id';
+        } else { // 新規登録画面の時
+           $unique = 'unique:terminal_managements,pc_name';
+        }
         return [
-        'pc_name'=> 'required',
+        'pc_name'=> 'required|' .$unique,
         'serial_no'=>'required',
         'status'=>'required',
         'depository'=>'required',

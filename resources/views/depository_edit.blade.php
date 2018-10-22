@@ -13,17 +13,23 @@
                     <div class="form-group">
                         <label class="col-lg-2 col-md-4 col-sm-2 control-label"><i class="fa fa-archive"></i>保管場所</label>
                         <div class="col-md-4">
-                        @if ($errors->has('depository'))
+                        @if ($errors->has('depository_name'))
                             <div class="has-error">
-                                {{ Form::text('depository', $depositories->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
-                                <span class="text-danger">{{$errors->first('depository')}}</span>
+                                {{ Form::text('depository_name', $depositories->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
+                                <span class="text-danger">{{$errors->first('depository_name')}}</span>
                             </div>
                         @else
-                            {{ Form::text('depository', $depositories->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
+                            {{ Form::text('depository_name', $depositories->name, ['placeholder' => '入力してください', 'class' => 'form-control']) }}
                         @endif
                     </div>
 
+                    </div>
                     <div class="row">
+                        <div class="col-md-7">
+                        @if ($errors->has('depository'))
+                                <span name="depository" class="text-danger">{{$errors->first('depository')}}</span>
+                        @endif
+                        </div>
                          <div class="col-sm-12 pull-right text-right">
                               <button type="submit" class="btn btn-round btn-success">編集</button>
                               <button id="delete" type="button" class="btn btn-round btn-danger">削除</button>
@@ -36,7 +42,6 @@
                   @csrf
                   @method('delete')
               </form>
-        </div>
     </div>
 
 </div>
