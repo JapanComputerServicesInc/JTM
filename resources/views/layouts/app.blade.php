@@ -206,6 +206,12 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                                 </form>
+                            {{-- @else
+                                <button type="button" class="btn btn-theme" onclick="event.preventDefault();
+                                                         document.getElementById('login-form').submit();">login</button>
+                                <form id="login-form" method="post" action="{{ route('login') }}" style="display: none;">
+                                 @csrf
+                                </form> --}}
                             @endif
                         </li>
                     </ul>
