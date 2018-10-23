@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
     // });
 
     Route::get('/', function () {
-        return redirect('/terminal/list');
+        return redirect('/terminal');
     });
 
     // 管理者

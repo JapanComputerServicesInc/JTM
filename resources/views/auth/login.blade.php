@@ -22,7 +22,7 @@
             @endif
             <label class="checkbox">
                 <span class="pull-right">
-                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+                    <a class="btn btn-link" href="{{ route('password.request') }}"> Forgot Password?</a>
                 </span>
             </label>
             <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
@@ -37,8 +37,11 @@
                 <a class="nav-link" href="{{ route('register') }}">Create an account</a>
             </div> --}}
         </div>
+    </form>
 
         <!-- Modal -->
+        <form method="POST" action="{{ route('password.email') }}" aria-label="{{ __('Reset Password') }}">
+        @csrf
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -48,18 +51,18 @@
                     </div>
                     <div class="modal-body">
                         <p>Enter your e-mail address below to reset your password.</p>
-                        {{-- <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix"> --}}
+                        <input id="email" type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
                     </div>
                     <div class="modal-footer">
                         <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                        <button class="btn btn-theme" type="button">Submit</button>
+                        <button class="btn btn-theme" type="submit">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
+    </form>
         <!-- modal -->
 
-    </form>
 
 </div>
 @endsection
